@@ -1,0 +1,91 @@
+body{
+  margin: 0%;
+  padding: 0%;
+}
+#header {
+  background-color: #d9d9d9;
+  width: 100%;
+  height: 102px;
+}
+#header img{
+  width: 180px;
+  padding: 15px;
+}
+#mainLogin {
+  background-color: #7ec384;
+  display: flex;
+  width: 100%;
+  height: 86vh;
+  align-items: center;
+  justify-content: center;
+}
+#loginPageLogo{
+  background-color: #d9d9d9;
+  width: 400px;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#loginPage{
+  background-color: white;
+  width: 400px;
+  height: 520px;
+}
+#loginPageLogo img{
+  width: 370px;
+  height: 180px;
+}
+#loginPage h1{
+  font-weight: 300;
+  color: #7ec384;
+  padding: 10px;
+}
+#loginPage p{
+  margin-top: 15px;
+  margin-left: 30px;
+  font-weight: 500;
+  font-size: 12pt;
+}
+#loginPage input{
+  margin-left: 30px;
+  font-size: 12pt;
+  width: 300px;
+  height: 70px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px rgb(177, 177, 177);
+  border: none ;
+  background-color: #d9d9d9;
+  padding-left: 12px;
+}
+#buttonArea{
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  margin-top: 40px;
+}
+#login{
+  width: 280px;
+  font-size: 13pt;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: #3f7856;
+  color: white;
+}
+#loginGoogle{
+  display: flex;
+  width: 280px;
+  font-size: 13pt;
+  height: 50px;
+  border-radius: 10px;
+  border-color: black;
+  background-color: #ffffff;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+#google{
+  width: 32px;
+  padding-right: 5px;
+}
