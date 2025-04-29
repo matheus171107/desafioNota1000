@@ -1,6 +1,6 @@
 import Header from '../components/Header'
 import LoginBox from '../components/LoginBox'
-import "./login.css"
+import "./style.css"
 
 function Home (){
     return(
