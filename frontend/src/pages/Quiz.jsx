@@ -1,57 +1,32 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import Perguntas from '../components/Perguntas'
+import { useNavigate } from 'react-router-dom';
+import Seta from "../assets/seta.png"
+import "./style.css";
 
-function Quiz() {
-  const [perguntas, setPerguntas] = useState([]);
-  const [indice, setIndice] = useState(0); // controla qual pergunta está
-  const [pontos, setPontos] = useState(0); // quantas acertou
-  const [fim, setFim] = useState(false);   // se terminou o quiz
+function Desempenho() {
+  const navigate = useNavigate();
+  return(
+    <>
+      <div id="mainQuiz">
+        <h1>SIMULADO DE CIÊNCIAS DA NATUREZA</h1>
 
-  useEffect(() => {
-    axios.get("http://localhost:3000/api/perguntas")
-      .then(res => setPerguntas(res.data))
-      .catch(err => console.log("Erro ao carregar", err));
-  }, []);
+        <div class="hr"></div>
+        <div id="container">
+          <div id="materia"><img src={Seta} alt="" width="40px" onClick={() => navigate("/home")}/> BIOLOGIA</div>
+          
+          <div class="hr2"></div>
 
-  const responder = (opcao) => {
-    const perguntaAtual = perguntas[indice];
+          <div class="questao">
+            <p id='texto1'>ENEM 2016</p>
+            <p id='texto'>QUESTÃO 1</p>
+            <Perguntas></Perguntas>
+          </div>
+        </div>
 
-    if (opcao === perguntaAtual.respostaCorreta) {
-      setPontos(pontos + 1); // somar ponto se acertar
-    }
-
-    // ir para a próxima ou finalizar
-    if (indice + 1 < perguntas.length) {
-      setIndice(indice + 1);
-    } else {
-      setFim(true);
-    }
-  };
-
-  if (perguntas.length === 0) return <p>Carregando...</p>;
-
-  if (fim) {
-    return (
-      <div>
-        <h1>Quiz finalizado!</h1>
-        <p>Você acertou {pontos} de {perguntas.length} perguntas ✅</p>
       </div>
-    );
-  }
-
-  const pergunta = perguntas[indice];
-
-  return (
-    <div>
-      <h1>Quiz</h1>
-      <p>{pergunta.pergunta}</p>
-      {pergunta.opcoes.map((opcao, i) => (
-        <button key={i} onClick={() => responder(opcao)}>
-          {opcao}
-        </button>
-      ))}
-    </div>
-  );
+    </>
+  )
 }
 
-export default Quiz;
+export default Desempenho;
+  

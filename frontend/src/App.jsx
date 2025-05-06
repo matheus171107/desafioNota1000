@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { auth } from "../firebaseConfig"
 import Login from "./pages/Login"
 import Home from "./pages/Home"
+import Desempenho from "./pages/Desempenho"
+import Quiz from "./pages/Quiz"
 import "./App.css"
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/desempenho" element={<Desempenho />} />
+        <Route path="/quiz" element={<Quiz />} />
       </Routes>
     </Router>
   )

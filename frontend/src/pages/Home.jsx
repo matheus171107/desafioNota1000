@@ -9,8 +9,10 @@ import matematica from '../assets/matematica.png'
 import humanas from '../assets/humanas.png'
 import linguagens from '../assets/linguagens.png'
 import logo from '../assets/logoHeader.png'
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
+  const navigate = useNavigate();
   return (
     <>
       <main id="mainHome">
@@ -39,26 +41,26 @@ function Home() {
           <div class="natureza">
             <h2><img src={natureza} class="icon"></img>Ciências da Natureza</h2> 
             <p>Neste simulado, você vai testar seus conhecimentos em Ciências da Natureza: Biologia, Física e Química, da maneira em que são mais cobrados. Ao todo, serão 15 questões: 10 com nível básico e médio, de conhecimento comum, pra revisar o que você já sabe, e 5 mais difíceis, retiradas de provas anteriores do Enem. Essa é uma ótima forma de treinar e se preparar para a prova de verdade!</p>
-            <div class="buttons"><button>Inicair Simulado</button></div>
+            <div class="buttons"><button onClick={() => navigate("/quiz")}>Iniciar Simulado</button></div>
             
           </div>
 
           <div class="matematica">
             <h2><img src={matematica} class="icon"></img>Matemática</h2>
             <p>Neste simulado, você vai testar seus conhecimentos em Matemática, resolvendo questões de Matemática Básica, Álgebra, Estátistica e Geometria. Ao todo, serão 15 questões: 10 com nível básico e médio, de conhecimento comum, pra revisar o que você já sabe, e 5 mais difíceis, retiradas de provas anteriores do Enem. Essa é uma ótima forma de treinar e se preparar para a prova de verdade!</p>
-            <div class="buttons"><button>Inicair Simulado</button></div>
+            <div class="buttons"><button>Iniciar Simulado</button></div>
           </div>
 
           <div class="humanas">
             <h2><img src={humanas} class="icon"></img>Ciências Humanas</h2>
             <p>Neste simulado, você vai testar seus conhecimentos em Ciências Humanas: História Geral e do Brasil, Geografia, Sociologia e Filosofia, da maneira em que são mais cobrados. Ao todo, serão 15 questões: 10 com nível básico e médio, de conhecimento comum, pra revisar o que você já sabe, e 5 mais difíceis, retiradas de provas anteriores do Enem. Essa é uma ótima forma de treinar e se preparar para a prova de verdade!</p>
-            <div class="buttons"><button>Inicair Simulado</button></div>
+            <div class="buttons"><button>Iniciar Simulado</button></div>
           </div>
 
           <div class="linguagens">
             <h2><img src={linguagens} class="icon"></img>Linguagens</h2>
             <p>Neste simulado, você vai testar seus conhecimentos em Linguagens: Literatura, Artes, Gramática, Educação Física e Lingua Estrangeira da maneira em que são mais cobrados. Ao todo, serão 15 questões: 10 com nível básico e médio, de conhecimento comum, pra revisar o que você já sabe, e 5 mais difíceis, retiradas de provas anteriores do Enem. Essa é uma ótima forma de treinar e se preparar para a prova de verdade!</p>
-            <div class="buttons"><button>Inicair Simulado</button></div>
+            <div class="buttons"><button>Iniciar Simulado</button></div>
           </div>
         </div>
       </main>
