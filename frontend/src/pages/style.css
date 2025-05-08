@@ -206,7 +206,6 @@ button {
   border-radius: 10px;
   font-size: 20px;
   border: none;
-  margin-bottom: 1;
   cursor: pointer;
 }
 
@@ -297,20 +296,22 @@ button {
   cursor: pointer;
 }
 
-#pergunta {
+.pergunta {
   color: black;
   margin: 20px;
   font-size: 14pt;
   text-align: justify;
+  font-weight: 400;
 }
 
 .questao {
   background-color: #A3D2D5;
   border-radius: 20px;
-  height: 93%;
+  height: 120%;
   width: 85%;
   padding: 10px;
-  margin-bottom: 70px;
+  padding-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 #texto1 {
@@ -320,4 +321,25 @@ button {
 
 #texto {
   color: black;
+  margin: 3px;
+}
+#explicacao{
+  width: 90%;
+  text-align: justify;
+  display: none;
+}
+#explicacao p{
+  color:black;
+  margin-top: 0%;
+}
+#buttonProximo button{
+  font-size: 13pt;
+  width: 180px;
+  height: 30px;
+}
+#buttonProximo{
+  display: none;
+  margin-top: 10px;
+  width: 100%;
+  justify-content: center;
 }
