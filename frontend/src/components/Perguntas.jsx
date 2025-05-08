@@ -14,6 +14,7 @@ function Perguntas() {
       .catch(err => console.log("Erro ao carregar", err));
   }, []);
 
+
   const responder = (opcao) => {
     const perguntaAtual = perguntas[indice];
 
@@ -29,11 +30,12 @@ function Perguntas() {
 
   if (perguntas.length === 0) return <img src={carregando} alt="" width="60px"/>; 
   const pergunta = perguntas[indice];
-  
+  const urlImg = pergunta.url
   return(
     <div>
         <div id="perguntasBox">
         <h3 id="pergunta">{pergunta.pergunta}</h3>
+        {urlImg != null ? <img src={urlImg} alt="" /> : console.log("Não a imgens cadastradas")}
             <button onClick={() => responder(pergunta.opcoes[0])}>{pergunta.opcoes[0]}</button>
             <button onClick={() => responder(pergunta.opcoes[1])}>{pergunta.opcoes[1]}</button>
             <button onClick={() => responder(pergunta.opcoes[2])}>{pergunta.opcoes[2]}</button>
