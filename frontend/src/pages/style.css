@@ -110,7 +110,7 @@ body {
   width: 98vW;
   height: 170vh;
   display: flex;
-  
+  background-color: #f6f6f6;
 }
 
 #mainHome h1 {
@@ -129,12 +129,13 @@ body {
   margin: 15px;
 }
 
-ul {
+#menu ul {
   padding: 10px;
 }
 
-li {
+#menu li {
   list-style: none;
+  cursor: pointer;
 }
 
 .icones {
@@ -216,6 +217,7 @@ button {
 }
 
 
+
 /* QUIZ */
 #perguntasBox {
   width: 100%;
@@ -251,7 +253,6 @@ button {
 
 #mainQuiz h1 {
   margin: 0%;
-  margin: 0%;
   padding: 15px;
   font-weight: 300;
   width: 97%;
@@ -263,11 +264,13 @@ button {
   margin-bottom: 20px;
   width: 97%;
 }
+
 .hr2 {
   background-color: black;
   height: 0.3px;
   margin-bottom: 20px;
   width: 30%;
+  display: none ;
 }
 
 #container {
@@ -276,6 +279,7 @@ button {
   align-items: center;
   background-color: #ffffff;
   border-radius: 20px;
+  padding: 1.5rem;
   width: 70%;
   margin-bottom: 15px;
 }
@@ -284,15 +288,16 @@ button {
   color: black;
   font-weight: bold;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
-  padding: 5px;
-  width: 98%;
+  /* padding: 5px; */
+  width: 100%;
   font-size: 18pt;
 }
 
 #materia img {
   padding: 5px;
-  margin-right: 420px;
+  /* margin-right: 420px; */
   cursor: pointer;
 }
 
@@ -308,7 +313,7 @@ button {
   background-color: #A3D2D5;
   border-radius: 20px;
   height: 120%;
-  width: 85%;
+  /* width: 85%; */
   padding: 10px;
   padding-bottom: 40px;
   margin-bottom: 10px;
@@ -323,23 +328,467 @@ button {
   color: black;
   margin: 3px;
 }
+
 #explicacao{
   width: 90%;
   text-align: justify;
   display: none;
 }
+
 #explicacao p{
   color:black;
   margin-top: 0%;
 }
+#explicacao h3{
+  color: black;
+  padding-bottom: 10px;
+}
+
 #buttonProximo button{
   font-size: 13pt;
   width: 180px;
   height: 30px;
 }
+
 #buttonProximo{
   display: none;
   margin-top: 10px;
   width: 100%;
   justify-content: center;
+}
+
+#materiaText{
+  color: black;
+}
+
+/*DESEMPENHO */
+#menu {
+  background-color: white;
+  width: 200px;
+  height: 450px;
+  border-radius: 20px;
+  align-items: center;
+  margin: 15px;
+}
+
+#mainDesempenho {
+  width: 98vW;
+  height: 100vh;
+  display: flex;
+}
+
+#mainDesempenho h1 {
+  margin: 0%;
+  padding: 15px;
+  font-weight: 300;
+}
+
+.percentualAcertos {
+  background-color: white;
+  
+}
+
+/* CRÉDITOS */
+#mainCreditos {
+  width: 98vW;
+  height: 265vh;
+  display: flex;
+}
+
+#mainCreditos h1 {
+  margin: 0%;
+  padding: 15px;
+  font-weight: 300;
+}
+
+.textodeAgradecimento p {
+  color: white;
+}
+
+.textodeAgradecimento {
+  background-color: #45625D;
+  border-radius: 20px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.creditos h3 {
+  font-size: 30px;
+  margin: 20px;
+  color: #3F7857;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.funcao {
+  border-radius: 20px;
+  background-color: #CBCBCB;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border: 1px solid black;
+}
+
+.funcao li {
+  padding: 3px;
+}
+
+.creditos p {
+  color: #414141;
+}
+
+.videos {
+  border-radius: 20px;
+  background-color: #CBCBCB;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border: 1px solid black;
+}
+
+.videos li {
+  list-style: none;
+  padding-bottom: 15px;
+}
+
+.videos b {
+  text-decoration: underline; /* Adiciona a linha embaixo */
+  color: blue; /* Cor do texto */
+  text-decoration-color: blue; /* Cor da linha embaixo */
+}
+
+.questoesExercicios {
+  border-radius: 20px;
+  background-color: #CBCBCB;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border: 1px solid black;
+}
+
+.questoesExercicios li {
+  list-style: none;
+  padding-bottom: 15px;
+}
+
+.questoesExercicios b {
+  text-decoration: underline; /* Adiciona a linha embaixo */
+  color: blue; /* Cor do texto */
+  text-decoration-color: blue; /* Cor da linha embaixo */
+}
+
+.contatos p {
+  color: #414141;
+}
+
+.contatos h4 {
+  font-size: 18px;
+}
+
+.contatos b {
+  color: #3F7857;
+}
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  justify-content: center;
+  padding: 0%;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877f2;
+  color: #fff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #1da1f2;
+  color: #fff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #e4405f;
+  color: #fff;
+}
+
+
+/*VIDEO AULA*/
+#mainVideoAula {
+  width: 98vW;
+  height: 81  0vh;
+  display: flex;
+}
+
+#mainVideoAula h1 {
+  margin: 0%;
+  padding: 15px;
+  font-weight: 300;
+}
+  
+h3 {
+  color: white;
+  margin: 0%;
+  padding: 5px;
+  padding-top: 0%;
+  padding-bottom: 0%;
+}
+
+.naturezaV p{
+  margin: 5px;
+  margin-bottom: 10px;
+}
+
+.naturezaV {
+  background-color: #3d7e49;
+  width: 90%;
+  height: 105%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.video1{
+  background-color: white;
+  width: 80%;
+  height: 12%;
+  display: grid;
+  justify-content: center;
+  margin-top: 40px;
+  border-radius: 5px;
+}
+
+.descricaoVideo{
+  width: 98%;
+} 
+
+.naturezaV h2{
+  padding: 0%;
+  margin: 0%;
+  padding-top: 10px;
+}
+
+.areaVideos{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.matematicaV{
+  background-color: #830909;
+  width: 91%;
+  height: 20%;
+  border-radius: 20px;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.matematicaV p{
+  margin: 5px;
+  margin-bottom: 10px;
+}
+
+.humanasV{
+  background-color: #b36100;
+  width: 91%;
+  height: 20%;
+  border-radius: 20px;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.humanasV p{
+  margin: 5px;
+  margin-bottom: 10px;
+}
+
+.literaturaV{
+  background-color: #8400b3;
+  width: 91%;
+  height: 20%;
+  border-radius: 20px;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.literaturaV p{
+  margin: 5px;
+  margin-bottom: 10px;
+}
+
+/* DESEMPENHO */
+.desempenho-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.desempenho-container p {
+  color: black;
+}
+
+.percentual-acertos {
+  width: 30%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.percentual-acertos h2 {
+  color: black;
+}
+
+.estatisticas {
+  width: 65%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.estatistica {
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.estatistica.verde {
+  background-color: #7EC384;
+}
+
+.estatistica.vermelha {
+  background-color: #F96868;
+}
+
+.materias-revisar {
+  margin-top: 20px;
+}
+
+.materias-revisar table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white ;
+}
+
+.materias-revisar th,
+.materias-revisar td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.materias-revisar th {
+  background-color: rgb(234, 253, 232);
+}
+
+.materias-revisar p {
+  color: black;
+  font-size: 25px;
+  text-align: center;
+  width: 100%;
+}
+
+
+/* To hide the checkbox */
+#checkboxInput {
+  display: none;
+}
+
+.toggleSwitch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 50px;
+  height: 20px;
+  background-color: rgb(206, 206, 206);
+  border-radius: 40px;
+  cursor: pointer;
+  transition-duration: .3s;
+}
+
+.toggleSwitch::after {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 50%;
+  left: 0px;
+  background: white;
+  border-radius: 40px;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.281);
+}
+
+#checkboxInput:checked+.toggleSwitch::after {
+  transform: translateX(100%);
+  transition-duration: .3s;
+}
+
+
+/* Switch background change */
+#checkboxInput:checked+.toggleSwitch {
+  background-color: rgb(124, 173, 206);
+  transition-duration: .3s;
 }

@@ -9,224 +9,144 @@ const db = admin.firestore();
 
 const perguntas =[
   {
-    enunciado: "O quadro representa os gastos mensais, em real de uma família com internet, mensalidade escolar e mesada do filho. No início do ano, a internet e a mensalidade escolar tiveram acréscimos, respectivamente, de 20% e 10%. Necessitando manter o valor da despesa mensal total com os itens citados, a família reduzirá a mesada do filho. Qual será a porcentagem da redução da mesada?",
-    pergunta: "Qual será a porcentagem da redução da mesada?",
+    enunciado: "O mais antigo grupo de rap indígena do país, Brô MCs, surgiu em 2009, na aldeia Jaguapiru, em Dourados, Mato Grosso do Sul. Os integrantes conheceram o rap pelo rádio, ouvindo um programa que apresentava cantores e grupos brasileiros desse gênero musical. O Brô MCs conseguiu influenciar outros a fazerem rap e a lutarem pelas causas indígenas. Um dos nomes do movimento, Kunumí MC, é um jovem de 16 anos, da aldeia Krukutu, em São Paulo. O adolescente enxerga o rap como uma cultura da defesa e começou a fazer rimas quando percebeu que a poesia, pela qual sempre se interessou, podia virar música. Nas letras que cria, inspiradas tanto pelo rap quanto pelos ritmos indígenas, tenta incluir sempre assuntos aos quais acha importante dar voz, principalmente, a questão da demarcação de terras.",
+    pergunta: "O movimento rap dos povos originários do Brasil revela o(a)",
     opcoes: [
-      "A) 15,0",
-      "B) 23,5",
-      "C) 30,0",
-      "D) 70,0",
-      "E) 76,5"
+      "A)fusão de manifestações artísticas urbanas contemporâneas com a cultura indígena.",
+      "B)contraposição das temáticas socioambientais indígenas às questões urbanas.",
+      "C)rejeição da indústria radiofônica às músicas indígenas.",
+      "D)distanciamento da realidade social indígena.",
+      "E)estímulo ao estudo da poesia indígena."
     ],
-    correta: "B) 23,5",
-    explicacao: "O novo preço da internet é \n 120.1,2 = 144\n Enquanto a mensalidade é\n 700.1,1 = 770\n Seja x a nova mesada do filho\n 144 + 770 + x = 120 + 700 + 400\n x = 306\n Reduziu em 94 reais\n 94/400 = 0,235 = 23,5 %",
-    url: "https://xequematenem.com.br/blog/wp-content/webp-express/webp-images/uploads/2023/07/O-quadro-representa-os-gastos-mensais-em-real-de-uma-familia-com-internet-mensalidade-escolar-e-mesada-do-filho.png.webp",
-    categoria: "MATEMÁTICA"
+    correta: "A)fusão de manifestações artísticas urbanas contemporâneas com a cultura indígena.",
+    explicacao: "O texto mostra como o grupo Brô MCs e o jovem Kunumí MC unem o rap, que é uma expressão artística urbana e contemporânea, com elementos da cultura indígena, como os ritmos tradicionais e as lutas dos povos originários, como a demarcação de terras.",
+    "categoria": "ARTES"
   },
   {
-    enunciado: "Contratos de vários serviços disponíveis na internet apresentam uma quantidade excessiva de informações. Isso faz com que o tempo necessário para a leitura desses contratos possa ser longo. O quadro apresenta uma amostra do tempo considerado necessário para a leitura completa do contrato de alguns serviços digitais. O tempo médio, em minuto, necessário para a leitura completa de um contrato de serviço dentre os listados no quadro é, com uma casa decimal, aproximadamente",
-    pergunta: "O tempo médio, em minuto, necessário para a leitura completa de um contrato de serviço dentre os listados no quadro é, com uma casa decimal, aproximadamente",
+    enunciado: "O texto estabelece uma relação entre elementos da natureza e comandos de um programa de computador para...",
+    pergunta: "O texto estabelece uma relação entre elementos da natureza e comandos de um programa de computador para",
     opcoes: [
-      "a) 13,0.",
-      "b) 15,0.",
-      "c) 19,8.",
-      "d) 20,0.",
-      "e) 23,3."
+      "A)alertar as pessoas sobre a rápida destruição da natureza.",
+      "B)conscientizar os indivíduos sobre a passagem acelerada do tempo.",
+      "C)apresentar aos leitores os avanços tecnológicos na área da agricultura.",
+      "D)orientar os usuários sobre o emprego sustentável das novas tecnologias",
+      "E)informar os interessados sobre o tempo de crescimento de novas árvores."
     ],
-    correta: "c) 19,8.",
-    explicacao: "",
-    url: "https://xequematenem.com.br/blog/wp-content/webp-express/webp-images/uploads/2024/11/Contratos-de-varios-servicos.png.webp",
-    categoria: "MATEMÁTICA"
+    correta: "A)alertar as pessoas sobre a rápida destruição da natureza.",
+    explicacao: "O texto utiliza uma metáfora, comparando elementos naturais a comandos de exclusão de um programa de computador, para destacar a urgência e a rapidez com que a natureza está sendo destruída.",
+    categoria: "LINGUA ESTRANGEIRA"
   },
   {
-    enunciado: "A umidade relativa do ar é um dos indicadores utilizados na meteorologia para fazer previsões sobre o clima. O quadro apresenta as médias mensais, em porcentagem, da umidade relativa do ar em um período de seis meses consecutivos em uma cidade. Nessa cidade, a mediana desses dados, em porcentagem, da umidade relativa do ar no período considerado foi",
-    pergunta: "Nessa cidade, a mediana desses dados, em porcentagem, da umidade relativa do ar no período considerado foi",
+    enunciado: "A anorexia é um transtorno alimentar caracterizado por grande perda de peso, ausência de menstruação e distúrbio na vivência do peso ou da forma corporal. Fatores familiares, psicológicos, socioculturais e fisiológicos interagem entre si, predispondo, precipitando e/ou mantendo o transtorno. Anoréxicos têm medo doentio de engordar e experienciam uma grande necessidade de controle sobre o peso e a forma do corpo. Dietas exíguas, uso de laxantes, diuréticos e indução de vômito são estratégias para manter o peso e a forma corporal. O exercício também é uma estratégia para perder e controlar o peso, sendo praticado de maneira ritualizada e excessiva. O objetivo é alcançar um corpo ideal condizente com os padrões de beleza, eliminando as poucas calorias que o sujeito se permite ingerir.",
+    pergunta: "Uma causa determinante que contribui para a anorexia, vinculada ao exercício físico, é o(a)",
     opcoes: [
-      "a) 56",
-      "b) 58",
-      "c) 59",
-      "d) 60",
-      "e) 62"
+      "A)busca por um modelo de corpo e beleza estereotipado socialmente",
+      "B)conjunto de fatores familiares, psicológicos e socioculturais.",
+      "C)utilização de medicamentos e dietas restritivas.",
+      "D)recorrência da provocação do vômito.",
+      "E)medo exagerado de ganhar peso."
     ],
-    correta: "e) 62",
-    explicacao: "A mediana é o valor central de um conjunto de dados organizados em ordem crescente ou decrescente. Para um número par de dados, a mediana é a média aritmética dos dois valores centrais.",
-    url: "https://xequematenem.com.br/blog/wp-content/webp-express/webp-images/uploads/2024/11/A-umidade-relativa-do-ar.png.webp",
-    categoria: "MATEMÁTICA"
+    correta: "A)busca por um modelo de corpo e beleza estereotipado socialmente",
+    explicacao: "O texto destaca que o objetivo dos anoréxicos é alcançar um corpo ideal condizente com os padrões de beleza, o que mostra claramente a influência dos estereótipos sociais na prática excessiva de exercícios físicos como tentativa de manter esse padrão.",
+    categoria: "EDUCAÇÃO FÍSICA"
   },
   {
-    enunciado: "A foto mostra a construção de uma cisterna destinada ao armazenamento de água. Uma cisterna como essa, na forma de cilindro circular reto com 3 m2 de área da base, foi abastecida por um curso-d'água com vazão constante. O seu proprietário registrou a altura do nível da água no interior da cisterna durante o abastecimento em diferentes momentos de um mesmo dia, conforme o quadro. Qual foi a vazão, em metro cúbico por hora, do curso-d'água que abastece a cisterna?",
-    pergunta: "Qual foi a vazão, em metro cúbico por hora, do curso-d'água que abastece a cisterna?",
+    enunciado: "Teu dedo curioso me segue lento no rosto\nOs sulcos, as sombras machucadas por onde a luz passou.\nQue silêncio, prenda minha... Que desvio triunfal da verdade,\nQue círculos vagarosos na lagoa em que uma asa gratuita roçou...\nTive quatro amores eternos...\nO primeiro era moça donzela,\nO segundo... eclipse, boi que fala, cataclisma,\nO terceiro era a rica senhora,\nO quarto éstu... E eu afinal me repousei dos meus cuidados",
+    pergunta: "O trecho revela, no último verso, um sentimento de:",
     opcoes: [
-      "a) 0,3",
-      "b) 0,5",
-      "c) 0,9",
-      "d) 1,8",
-      "e) 2,7"
+      "A)vergonha das marcas provocadas pela passagem do tempo.",
+      "B)indecisão em face das possibilidades afetivas do presente.",
+      "C)serenidade sedimentada pela entrega pacífica ao desejo.",
+      "D)frustração causada pela vontade de retorno ao passado.",
+      "E)disponibilidade para a exploração do prazer efêmero."
     ],
-    correta: "c) 0,9",
-    explicacao: "Em uma variação de 2 horas, o nível da água aumentou 1,1 – 0,5 = 0,6 m. Como a área da base do cilindro é igual a 3 m2, o volume de água (em forma de cilindro) é igual a 3*0,6=1,8 m3 em duas horas. Ou seja, a vazão é de 0,9 m3 por hora.",
-    url: "https://xequematenem.com.br/blog/wp-content/webp-express/webp-images/uploads/2023/11/Imagem-PNG-33.png.webp",
-    categoria: "MATEMÁTICA"
+    correta: "C)serenidade sedimentada pela entrega pacífica ao desejo.",
+    explicacao: "No último verso “E eu afinal me repousei dos meus cuidados”, o eu lírico indica um desejo de repouso expresso, conforme explícito pela alternativa C ao mencionar a “serenidade” associada ao repouso.",
+    categoria: "LITERATURA"
   },
   {
-    enunciado: "Para concretar a laje de sua residência, uma pessoa contratou uma construtora. Tal empresa informa que o preço y do concreto bombeado é composto de duas partes: uma fixa, chamada de taxa de bombeamento, e outra variável, que depende do volume x de concreto utilizado. Sabe-se que a taxa de bombeamento custa R$ 500,00 e que o metro cúbico do concreto bombeado é de R$ 250,00. A expressão que representa o preço y em função do volume x, em metro cúbico, é",
-    pergunta: "A expressão que representa o preço y em função do volume x, em metro cúbico, é",
+    enunciado: "(Tradução da placa: Não me esqueçam quando eu for um nome importante.) A contemporaneidade identificada na performance/instalação do artista mineiro Paulo Nazareth reside principalmente na forma como ele:",
+    pergunta: "A contemporaneidade identificada na performance/instalação do artista mineiro Paulo Nazareth reside principalmente na forma como ele:",
     opcoes: [
-      "a) y = 250x",
-      "b) y = 500x",
-      "c) y = 750x",
-      "d) y = 250x + 500",
-      "e) y = 500x + 250"
+      "A)resgata conhecidas referências do modernismo mineiro.",
+      "B)utiliza técnicas e suportes tradicionais na construção das formas.",
+      "C)articula questões de identidade, território e códigos de linguagens",
+      "D)imita o papel das celebridades no mundo contemporâneo.",
+      "E)camufla o aspecto plástico e a composição visual de sua montagem."
     ],
-    correta: "d) y = 250x + 500",
-    explicacao: "O preço y está em função do volume x de concreto, em metros cúbicos. Sabendo que existe uma taxa fixa de bombeamento que custa R$ 500,00 e que o m3 de concreto custa R$ 250,00, podemos escrever a função da seguinte forma: y = 250x + 500",
-    categoria: "MATEMÁTICA"
+    correta: "C)articula questões de identidade, território e códigos de linguagens",
+    explicacao: "A obra de Paulo Nazareth combina performance, instalação e crítica social. Ao se posicionar com uma placa que diz 'Não me esqueçam quando eu for um nome importante', ele provoca reflexões sobre identidade, reconhecimento, desigualdade, colonialismo e a relação entre arte, mercado e território.",
+    categoria: "LITERATURA"
   },
   {
-    enunciado: "A Pesquisa Nacional por Amostra de Domicílios (Pnad) é uma pesquisa feita anualmente pelo IBGE, exceto nos anos em que há Censo. Em um ano, foram entrevistados 363 mil jovens para fazer um levantamento sobre suas atividades profissionais e/ou acadêmicas. Os resultados da pesquisa estão indicados no gráfico. Jovens em atividade entre 15 e 29 anos (%). De acordo com as informações dadas, o número de jovens entrevistados que trabalha é:",
-    pergunta: "De acordo com as informações dadas, o número de jovens entrevistados que trabalha é:",
+    enunciado: "O Marabaixo é uma expressão artístico-cultural formada nas tradições e na identificação cultural entre as comunidades negras do Amapá. O nome remonta às mortes de escravizados em navios negreiros que eram jogados na água. Em sua homenagem, hinos de lamento eram cantados mar abaixo, mar acima. Posteriormente, o Marabaixo se integrou à vivência das comunidades negras em um ciclo de danças, cantorias com tambores e festas religiosas, recebendo, em 2018, o título de Patrimônio Cultural do Brasil.",
+    pergunta: "A manifestação do Marabaixo se constituiu em expressão de arte e cultura, exercendo função de:",
     opcoes: [
-      "a) 114 708.",
-      "b) 164 076.",
-      "c) 213 444.",
-      "d) 284 592.",
-      "e) 291 582."
+      "A)ressignificar episódios dramáticos em novas práticas culturais.",
+      "B)adaptar coreografias como imitação dos movimentos do mar.",
+      "C)lembrar dos mortos no passado escravista como forma de lamento.",
+      "D)perpetuar uma narrativa de apagamento dos fatos históricos traumáticos.",
+      "E)ritualizar a passagem de atos fúnebres nas produções coletivas com espírito festivo."
     ],
-    correta: "c) 213 444.",
-    explicacao: "Pela pesquisa, o total percentual de pessoas que trabalham é de 13,6 + 45,2 = 58,8%. Assim, temos um total de 363.000 ∙ 58,8% = 363.000 ∙ 0,588 = 213.444 pessoas.",
-    url: "https://sisq.elitecampinas.com.br/Content/Data/imagens/3B74885AB96F02F951BE076404E2FCD4.png",
-    categoria: "MATEMÁTICA"
+    correta: "A)ressignificar episódios dramáticos em novas práticas culturais.",
+    explicacao: "O texto mostra que o Marabaixo surgiu como uma forma de homenagem e lamento pelas mortes de escravizados, mas ao longo do tempo se transformou em uma expressão cultural viva, com danças, cantorias e festas religiosas. Isso caracteriza um processo de ressignificação, em que episódios trágicos da história são transformados em novas práticas culturais.",
+    categoria: "ARTES"
   },
   {
-    enunciado: "O quadro apresenta o número de terremotos de magnitude maior ou igual a 7, na escala Richter, ocorridos em nosso planeta nos anos de 2000 a 2011. Um pesquisador acredita que a mediana representa bem o número anual típico de terremotos em um período. Segundo esse pesquisador, o número anual típico de terremotos de magnitude maior ou igual a 7 é",
-    pergunta: "Segundo esse pesquisador, o número anual típico de terremotos de magnitude maior ou igual a 7 é",
+    enunciado: "As lutas podem ser classificadas de diferentes formas, de acordo com a relação espacial entre os oponentes. As lutas de contato direto são caracterizadas pela manutenção do contato direto entre os adversários, os quais procuram empurrar, desequilibrar, projetar ou imobilizar o oponente. Já as lutas que mantêm o adversário a distância são caracterizadas pela manutenção de uma distância segura em relação ao adversário, para não ser atingido pelo oponente, procurando o contato apenas no momento da aplicação de uma técnica (golpe).",
+    pergunta: "Com base na classificação presente no texto, são exemplos de luta de contato direto e de luta que mantém o adversário a distância, respectivamente:",
     opcoes: [
-      "a) 11.",
-      "b) 15.",
-      "c) 15,5.",
-      "d) 15,7.",
-      "e) 17,5."
+      "A)judô e karatê.",
+      "B)jiu-jítsu e sumô.",
+      "C)boxe e kung fu.",
+      "D)esgrima e luta olímpica.",
+      "E)Muay Thai e tae kwon do."
     ],
-    correta: "c) 15,5.",
-    explicacao: "Temos dados de um total de 12 anos, para fazer a mediana precisamos colocar os dados em ordem crescente e escolher o 6o e 7° termos para fazer a média entre eles. (15 + 16) / 2 = 15,5",
-    url: "https://dye22q7xtvl2n.cloudfront.net/images/aio/enem_2_dia_2021_148_0.png",
-    categoria: "MATEMÁTICA"
+    correta: "A)judô e karatê.",
+    explicacao: "Luta de contato direto: envolve manutenção constante de contato físico com o oponente, como no judô, onde os lutadores se seguram e tentam desequilibrar ou projetar o adversário. Luta que mantém o adversário à distância: há distanciamento, e o contato acontece apenas no momento do golpe, como no karatê.",
+    categoria: "EDUCAÇÃO FÍSICA"
   },
   {
-    enunciado: "Após consulta médica, um paciente deve seguir um tratamento composto por três medicamentos: X, Y e Z. O paciente, para adquirir os três medicamentos, faz um orçamento em três farmácias diferentes, conforme o quadro. Dessas farmácias, algumas oferecem descontos: na compra dos medicamentos X e Y na Farmácia 2, recebe-se um desconto de 20% em ambos os produtos, independentemente da compra do medicamento Z, e não há desconto para o medicamento Z; na compra dos 3 medicamentos na Farmácia 3, recebe-se 20% de desconto no valor total da compra. O paciente deseja efetuar a compra de modo a minimizar sua despesa com os medicamentos. De acordo com as informações fornecidas, o paciente deve comprar os medicamentos da seguinte forma:",
-    pergunta: "De acordo com as informações fornecidas, o paciente deve comprar os medicamentos da seguinte forma:",
+    enunciado: "Morir muy vivos. No todo es perder, es cierto. Si te esfuerzas mucho y bien, porque no viene de fábrica, ganas conocimiento del mundo y de ti mismo, empatía, sosiego y, en suma, algo que podríamos denominar sabiduría. Pero creo que para ello hay que mantenerse alerta y no darse nunca por vencido. Pero también es un tiempo para saldar cuentas. No creo que haya que dejarse llevar por el peso de los días como un leño podrido al que las olas arrojan finalmente a la playa. Uno siempre puede intentar sacarse alguna de las piedras que lleva a la espalda, decir las cosas que nunca se atrevió a decir, cumplir en la medida de lo posible los deseos arrumbados, rescatar algún sueño que quedó en la cuneta. No rendirse, esa es la clave. Y sobre todo decirse: ¿y por qué no? Porque la vejez no está reñida con la audacia. Debemos aspirar a morir muy vivos.",
+    pergunta: "Nesse texto, ao utilizar a expressão “morir muy vivos”, a escritora Rosa Montero evidencia a importância de se:",
     opcoes: [
-      "a) X, Y e Z na Farmácia 1.",
-      "b) X e Y na Farmácia 1, e Z na Farmácia 3.",
-      "c) X e Y na Farmácia 2, e Z na Farmácia 3.",
-      "d) X na Farmácia 2, e Y e Z na Farmácia 3.",
-      "e) X, Y e Z na Farmácia 3."
+      "A)acumular sabedoria com o passar do tempo.",
+      "B)observar o impacto dos anos sobre o corpo.",
+      "C)rever os erros e os acertos de sua trajetória.",
+      "D)desfrutar de todas as fases da vida.",
+      "E)libertar das amarras sociais."
     ],
-    correta: "a) X, Y e Z na Farmácia 1.",
-    explicacao: "Analisando as alternativas, a compra dos três medicamentos na farmácia 1 resulta no menor preço total.",
-    url: "https://xequematenem.com.br/blog/wp-content/webp-express/webp-images/uploads/2023/07/Apos-a-consulta-medica-um-paciente-deve-seguir-um-tratamento-composto-por-tres-medicamentos-X-Y-e-Z.png.webp",
-    categoria: "MATEMÁTICA"
+    correta: "D)desfrutar de todas as fases da vida.",
+    explicacao: "O texto de Rosa Montero transmite uma mensagem de vitalidade, coragem e aproveitamento da vida em sua totalidade, mesmo na velhice. A autora incentiva o leitor a não se entregar ao cansaço ou à rotina, mas sim a continuar sonhando, realizando desejos antigos, enfrentando seus medos e vivendo com intensidade, independentemente da idade.",
+    categoria: "LINGUA ESTRANGEIRA"
   },
   {
-    enunciado: "Em uma fábrica de refrigerantes, é necessário que se faça periodicamente o controle no processo de engarrafamento para evitar que sejam envasadas garrafas fora da especificação do volume escrito no rótulo. Diariamente, durante 60 dias, foram anotadas as quantidades de garrafas fora dessas especificações. O resultado está apresentado no quadro. A média diária de garrafas fora das especificações no período considerado é:",
-    pergunta: "A média diária de garrafas fora das especificações no período considerado é:",
+    enunciado: "Nessa tirinha, produzida na década de 1970, os recursos verbais e não verbais sinalizam a finalidade de:",
+    pergunta: "Nessa tirinha, produzida na década de 1970, os recursos verbais e não verbais sinalizam a finalidade de:",
     opcoes: [
-      "a) 0,1.",
-      "b) 0,2",
-      "c) 1,5.",
-      "d) 2,0.",
-      "e) 3,0."
+      "A)reforçar a luta por direitos civis.",
+      "B)explicitar a autonomia feminina.",
+      "C)ironizar as condições de igualdade.",
+      "D)estimular a abdicação da vida social.",
+      "E)criticar as obrigações da maternidade."
     ],
-    correta: "b) 0,2",
-    explicacao: "",
-    url: "https://s4.static.brasilescola.uol.com.br/exercicios/2021/10quadro-quantidade-diaria-garrafas.jpg",
-    categoria: "MATEMÁTICA"
+    correta: "C)ironizar as condições de igualdade.",
+    explicacao: "A ironia está presente quando se associa o “término da luta pela emancipação feminina” com o início da maternidade. Percebe-se, nesse contexto, que não há igualdade entre os gêneros no que diz respeito aos cuidados do “neném”.",
+    categoria: "PORTUGUÊS"
   },
   {
-    enunciado: "A bula de um antibiótico infantil, fabricado na forma de xarope, recomenda que sejam ministrados, diariamente, no máximo 500 mg desse medicamento para cada quilograma de massa do paciente. Um pediatra prescreveu a dosagem máxima desse antibiótico para ser ministrada diariamente a uma criança de 20 kg pelo período de 5 dias. Esse medicamento pode ser comprado em frascos de 10 mL, 50 mL, 100 mL, 250 mL e 500 mL. Os pais dessa criança decidiram comprar a quantidade exata de medicamento que precisará ser ministrada no tratamento, evitando a sobra de medicamento. Considere que 1 g desse medicamento ocupe um volume de 1 cm3. A capacidade do frasco, em mililitro, que esses pais deverão comprar é:",
-    pergunta: "A capacidade do frasco, em mililitro, que esses pais deverão comprar é:",
+    enunciado: "Singular ocorrência - Há ocorrências bem singulares. Está vendo aquela dama que vai entrando na igreja da Cruz? Parou agora no adro para dar uma esmola. - De preto? - Justamente; lá vai entrando; entrou. - Não ponha mais na carta. Esse olhar está dizendo que a dama é uma recordação de outro tempo, e não há de ser muito tempo, a julgar pelo corpo: é moça de truz. - Deve ter quarenta e seis anos. - Ah! conservada. Vamos lá; deixe de olhar para o chão e conte-me tudo. Está viúva, naturalmente? - Não. - Bem; o marido ainda vive. É velho? - Não é casada. - Solteira? - Assim, assim. Deve chamar-se hoje D. Maria de tal. Em 1860 florescia com o nome familiar de Marocas. Não era costureira, nem proprietária, nem mestra de meninas; vá excluindo as profissões e chegará lá. Morava na Rua do Sacramento. Já então era esbelta, e, seguramente, mais linda do que hoje; modos sérios, linguagem limpa.",
+    pergunta: "No diálogo, descortinam-se aspectos da condição da mulher em meados do século XIX. O ponto de vista dos personagens manifesta conceitos segundo os quais a mulher:",
     opcoes: [
-      "a) 10",
-      "b) 50",
-      "c) 100",
-      "d) 250",
-      "e) 500"
+      "A)encontra um modo de dignificar-se na prática da caridade.",
+      "B)preserva a aparência jovem conforme seu estilo de vida.",
+      "C)Condiciona seu bem-estar à estabilidade do casamento.",
+      "D)tem sua identidade e seu lugar referendados pelo homem.",
+      "E)renuncia à sua participação no mercado de trabalho."
     ],
-    correta: "b) 50",
-    explicacao: "  g      kgn\n,5 x  120\n x= 10g/dia\nComo são 5 dias, temos um total de 5 g de medicamento.\nComo o volume do medicamento é de 1 g para cada cm3, temos um total de 50cm3=50mL.",
-    categoria: "MATEMÁTICA"
-  },
-  {
-    enunciado: "A caixa-d'água de um edifício terá a forma de um paralelepípedo retângulo reto com volume igual a 28 080 litros. Em uma maquete que representa o edifício, a caixa-d’água tem dimensões 2 cm x 3,51 cm x 4 cm. Dado: 1 dm3 = 1 L. A escala usada pelo arquiteto foi:",
-    pergunta: "A escala usada pelo arquiteto foi:",
-    opcoes: [
-      "a) 1 : 10",
-      "b) 1 : 100",
-      "c) 1 : 1 000",
-      "d) 1 : 10 000",
-      "e) 1 : 100 000"
-    ],
-    correta: "b) 1 : 100",
-    explicacao: "A proporção é em três dimensões então para encontrar a proporção em decímetros é necessário calcular a raiz cúbica de x concluindo que a proporção é 1 : 100",
-    categoria: "MATEMÁTICA"
-  },
-  {
-    enunciado: "A ideia de usar rolos circulares para deslocar objetos pesados provavelmente surgiu com os antigos egípcios ao construírem as pirâmides. Representando por R o raio da base dos rolos cilíndricos, em metros, a expressão do deslocamento horizontal y do bloco de pedra em função de R, após o rolo ter dado uma volta completa sem deslizar, é",
-    pergunta: "A expressão do deslocamento horizontal y do bloco de pedra em função de R, após o rolo ter dado uma volta completa sem deslizar, é",
-    opcoes: [
-      "a) y = R.",
-      "b) y = 2R.",
-      "c) y = πR.",
-      "d) y = 2πR.",
-      "e) y = 4πR."
-    ],
-    correta: "e) y = 4πR.",
-    explicacao: "Ao girar o cilindro 2πR (comprimento da sua circunferência), o bloco de pedra desloca essa mesma distância sobre o rolo, como o rolo se desloca 2πR e pedra também, no total se desloca y = 2πR + 2πR = 4πR",
-    url: "https://dye22q7xtvl2n.cloudfront.net/images/enem/2010_165_0.png",
-    categoria: "MATEMÁTICA"
-  },
-  {
-    enunciado: "Para apagar os focos A e B de um incêndio, que estavam a uma distância de 30 m um do outro, os bombeiros de um quartel decidiram se posicionar de modo que a distância de um bombeiro ao foco A, de temperatura mais elevada, fosse sempre o dobro da distância desse bombeiro ao foco B, de temperatura menos elevada. Nestas condições, a maior distância, em metro, que dois bombeiros poderiam ter entre eles é:",
-    pergunta: "Nestas condições, a maior distância, em metro, que dois bombeiros poderiam ter entre eles é:",
-    opcoes: [
-      "a) 30.",
-      "b) 40.",
-      "c) 45.",
-      "d) 60.",
-      "e) 68."
-    ],
-    correta: "b) 40.",
-    explicacao: "O bombeiro está a distância x do ponto B e 2x do ponto A. Sabemos também que a distância total entre A e B é 30 metros, então x + 2x = 30, x = 10 m. Para que a distância do segundo bombeiro ao ponto A seja duas vezes a distância do ponto B teremos que posicioná-lo ao lado de B a uma distância y de modo que 30 + y = 2y, y = 30 m. Então a distância entre o primeiro bombeiro e o segundo é x + y = 10 + 30 = 40 m",
-    categoria: "MATEMÁTICA"
-  },
-  {
-    enunciado: "Um brinquedo infantil caminhão-cegonha é formado por uma carreta e dez carrinhos nela transportados, conforme a figura. No setor de produção da empresa que fabrica esse brinquedo, é feita a pintura de todos os carrinhos para que o aspecto do brinquedo fique mais atraente. São utilizadas as cores amarelo, branco, laranja e verde, e cada carrinho é pintado apenas com uma cor. O caminhão-cegonha tem uma cor fixa. A empresa determinou que em todo caminhão-cegonha deve haver pelo menos um carrinho de cada uma das quatro cores disponíveis. Mudança de posição dos carrinhos no caminhão-cegonha não gera um novo modelo do brinquedo. Com base nessas informações, quantos são os modelos distintos do brinquedo caminhão-cegonha que essa empresa poderá produzir?",
-    pergunta: "Quantos são os modelos distintos do brinquedo caminhão-cegonha que essa empresa poderá produzir?",
-    opcoes: [
-      "a) C6,4",
-      "b) C9,3",
-      "c) C10,4",
-      "d) 64",
-      "e) 46"
-    ],
-    correta: "b) C9,3",
-    explicacao: "Como todo caminhão cegonha deve ter pelo menos 1 carrinho de cada cor, é necessário colorir os 6 carrinhos restantes com as cores disponíveis. Isso pode ser feito de: 9! / (6!3!) = C9,3",
-    url: "https://sisq.elitecampinas.com.br/Content/Data/imagens/8C6106384313F80B0E048EFAD5543AD2.png",
-    categoria: "MATEMÁTICA"
-  },
-  {
-    enunciado: "É comum os artistas plásticos se apropriarem de entes matemáticos para produzirem, por exemplo, formas e imagens por meio de manipulações. Um artista plástico, em uma de suas obras, pretende retratar os diversos polígonos obtidos pelas intersecções de um plano com uma pirâmide regular de base quadrada. Segundo a classificação dos polígonos, quais deles são possíveis de serem obtidos pelo artista plástico?",
-    pergunta: "Segundo a classificação dos polígonos, quais deles são possíveis de serem obtidos pelo artista plástico?",
-    opcoes: [
-      "a) Quadrados, apenas.",
-      "b) Triângulos e quadrados, apenas.",
-      "c) Triângulos, quadrados e trapézios, apenas.",
-      "d) Triângulos, quadrados, trapézios e quadriláteros irregulares, apenas.",
-      "e) Triângulos, quadrados, trapézios e quadriláteros irregulares e pentágonos, apenas."
-    ],
-    correta: "e) Triângulos, quadrados, trapézios e quadriláteros irregulares e pentágonos, apenas.",
-    explicacao: "O número de polígonos formados depende do número de faces da pirâmide. Como podemos cortar suas faces em 3, 4 ou 5 pontos, podemos criar triângulos (3 pontos), quadrados, trapézio, quadriláteros irregulares (todos 4 pontos) e Pentágonos (5 pontos).",
-    categoria: "MATEMÁTICA"
+    correta: "D)tem sua identidade e seu lugar referendados pelo homem.",
+    explicacao: "Na sociedade do século XIX, a identidade da mulher era definida principalmente a partir de sua relação com os homens. Os personagens tentam “classificar” a dama observada com base no seu estado civil (se é casada, viúva, solteira), associando automaticamente isso à sua posição social e identidade.",
+    categoria: "LITERATURA"
   }];
 
 // Função para inserir
@@ -234,7 +154,7 @@ async function inserirPerguntas() {
   const batch = db.batch();
 
   perguntas.forEach((pergunta) => {
-    const docRef = db.collection("matematica").doc(); // ID automático
+    const docRef = db.collection("linguagens").doc(); // ID automático
     batch.set(docRef, pergunta);
   });
 

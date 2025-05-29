@@ -19,48 +19,67 @@ function Home() {
         <div id="menu">
           <img src={logo} alt="" id="imgLog" />
           <ul>
-            <li><img src={home} class="icones" />HOME</li>
+            <li onClick={() => navigate('/home')}><img src={home} className="icones" />HOME</li>
             <hr></hr><br></br>
-            <li><img src={desempenho} class="icones"/>DESEMPENHO</li>
+            <li onClick={() => navigate('/desempenho')}><img src={desempenho} className="icones"/>DESEMPENHO</li>
             <hr></hr><br></br>
-            <li><img src={videoAula} class="icones"/>VÍDEO AULAS</li>
+            <li onClick={() => navigate('/videoaula')}><img src={videoAula} className="icones"/>VÍDEO AULAS</li>
             <hr></hr><br></br>
-            <li><img src={creditos} class="icones"/>CRÉDITOS</li>
+            <li onClick={() => navigate('/creditos')}><img src={creditos} className="icones"/>CRÉDITOS</li>
             <hr></hr><br></br>
-            <li><img src={sair} class="icones"/>SAIR</li>
+            <li onClick={() => navigate('/desempenho')}><img src={sair} className="icones"/>SAIR</li>
             <hr></hr><br></br>
-            <li>Dark mode</li>
+            <li style={{display:'flex'}}>
+            <input id="checkboxInput" type="checkbox"/>
+            <label className="toggleSwitch" for="checkboxInput">
+            </label>
+              Dark mode
+            </li>
           </ul>
         </div>
         
-        <div class="conteudo">
+        <div className="conteudo">
           <h1>ENEM</h1>
-
           <hr></hr>
 
-          <div class="natureza">
-            <h2><img src={natureza} class="icon"></img>Ciências da Natureza</h2> 
+          <div className="natureza">
+            <h2><img src={natureza} className="icon"></img>Ciências da Natureza</h2> 
             <p>Neste simulado, você vai testar seus conhecimentos em Ciências da Natureza: Biologia, Física e Química, da maneira em que são mais cobrados. Ao todo, serão 15 questões: 10 com nível básico e médio, de conhecimento comum, pra revisar o que você já sabe, e 5 mais difíceis, retiradas de provas anteriores do Enem. Essa é uma ótima forma de treinar e se preparar para a prova de verdade!</p>
-            <div class="buttons"><button onClick={() => navigate("/quiz")}>Iniciar Simulado</button></div>
+            <div className="buttons"><button onClick={() => navigate("/quiz" , 
+            {state:{
+              materia:"natureza", 
+              area: "CIÊNCIAS DA NATUREZA"}
+            })}>Iniciar Simulado</button></div>
             
           </div>
 
-          <div class="matematica">
-            <h2><img src={matematica} class="icon"></img>Matemática</h2>
+          <div className="matematica">
+            <h2><img src={matematica} className="icon"></img>Matemática</h2>
             <p>Neste simulado, você vai testar seus conhecimentos em Matemática, resolvendo questões de Matemática Básica, Álgebra, Estátistica e Geometria. Ao todo, serão 15 questões: 10 com nível básico e médio, de conhecimento comum, pra revisar o que você já sabe, e 5 mais difíceis, retiradas de provas anteriores do Enem. Essa é uma ótima forma de treinar e se preparar para a prova de verdade!</p>
-            <div class="buttons"><button>Iniciar Simulado</button></div>
+            <div className="buttons"><button onClick={() => navigate("/quiz" , 
+              {state:{
+                materia:"matematica",
+                area: "MATEMÁTICA"}
+              })}>Iniciar Simulado</button></div>
           </div>
 
-          <div class="humanas">
-            <h2><img src={humanas} class="icon"></img>Ciências Humanas</h2>
+          <div className="humanas">
+            <h2><img src={humanas} className="icon"></img>Ciências Humanas</h2>
             <p>Neste simulado, você vai testar seus conhecimentos em Ciências Humanas: História Geral e do Brasil, Geografia, Sociologia e Filosofia, da maneira em que são mais cobrados. Ao todo, serão 15 questões: 10 com nível básico e médio, de conhecimento comum, pra revisar o que você já sabe, e 5 mais difíceis, retiradas de provas anteriores do Enem. Essa é uma ótima forma de treinar e se preparar para a prova de verdade!</p>
-            <div class="buttons"><button>Iniciar Simulado</button></div>
+            <div className="buttons"><button onClick={() => navigate("/quiz" , 
+              {state:{
+                materia:"humanas",
+                area: "CIÊNCIAS HUMANAS"}
+              })}>Iniciar Simulado</button></div>
           </div>
 
-          <div class="linguagens">
-            <h2><img src={linguagens} class="icon"></img>Linguagens</h2>
+          <div className="linguagens">
+            <h2><img src={linguagens} className="icon"></img>Linguagens</h2>
             <p>Neste simulado, você vai testar seus conhecimentos em Linguagens: Literatura, Artes, Gramática, Educação Física e Lingua Estrangeira da maneira em que são mais cobrados. Ao todo, serão 15 questões: 10 com nível básico e médio, de conhecimento comum, pra revisar o que você já sabe, e 5 mais difíceis, retiradas de provas anteriores do Enem. Essa é uma ótima forma de treinar e se preparar para a prova de verdade!</p>
-            <div class="buttons"><button>Iniciar Simulado</button></div>
+            <div className="buttons"><button onClick={() => navigate("/quiz" , 
+              {state:{
+                materia:"linguagens", 
+                area: "LINGUAGENS"}})}>Iniciar Simulado</button></div>
           </div>
         </div>
       </main>
