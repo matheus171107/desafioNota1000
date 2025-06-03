@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import carregando from "../assets/carregando.gif";
 import { useLocation } from "react-router-dom";
+import { addDoc, collection } from "firebase/firestore"; 
+import { db } from "../../firebaseConfig"
 
 function Perguntas() {
   const [perguntas, setPerguntas] = useState([]);
@@ -12,7 +14,7 @@ function Perguntas() {
   const [scrollar, setScrollar] = useState(false);
 
   const location = useLocation();
-  const { materia } = location.state || {};
+  const { materia, ares} = location.state || {};
 
   const buttonProximo = document.querySelector("#buttonProximo");
   const materiaText = document.querySelector('#materiaText')
@@ -32,6 +34,25 @@ function Perguntas() {
       setScrollar(false);
     }
   }, [scrollar]);
+
+  useEffect(() => {
+  if (fim) {
+    const salvarResultado = async () => {
+      try {
+        await addDoc(collection(db, "resultados"), {
+          data: new Date(),
+          materia: materia,
+          acertos: acertos,
+          total: perguntas.length
+        });
+        console.log("Resultado salvo com sucesso!");
+      } catch (err) {
+        console.error("Erro ao salvar no Firestore:", err);
+      }
+    };
+    salvarResultado();
+  }
+}, [fim, acertos, materia, perguntas.length]);
 
   const responder = (opcao, buttonIndice) => {
     if (validacao) {
