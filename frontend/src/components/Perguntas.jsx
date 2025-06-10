@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import carregando from "../assets/carregando.gif";
 import { useLocation } from "react-router-dom";
-import { addDoc, collection } from "firebase/firestore"; 
-import { db } from "../../firebaseConfig"
+import { setDoc, doc, getDoc } from "firebase/firestore";
+import { db, auth } from "../../firebaseConfig"
 
 function Perguntas() {
   const [perguntas, setPerguntas] = useState([]);
@@ -14,7 +14,8 @@ function Perguntas() {
   const [scrollar, setScrollar] = useState(false);
 
   const location = useLocation();
-  const { materia, ares} = location.state || {};
+  const { materia } = location.state || {};
+  const userEmail = auth.currentUser.email;
 
   const buttonProximo = document.querySelector("#buttonProximo");
   const materiaText = document.querySelector('#materiaText')
@@ -23,7 +24,7 @@ function Perguntas() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/${materia}`)
+      .get(`http://localhost:5000/api/${materia}`)
       .then((res) => setPerguntas(res.data))
       .catch((err) => console.log("Erro ao carregar", err));
   }, [materia]);
@@ -36,23 +37,63 @@ function Perguntas() {
   }, [scrollar]);
 
   useEffect(() => {
-  if (fim) {
-    const salvarResultado = async () => {
-      try {
-        await addDoc(collection(db, "resultados"), {
-          data: new Date(),
-          materia: materia,
-          acertos: acertos,
-          total: perguntas.length
-        });
-        console.log("Resultado salvo com sucesso!");
-      } catch (err) {
-        console.error("Erro ao salvar no Firestore:", err);
+    if (fim) {
+      function sanitizarEmail(email) {
+        return email.replace(/[.#$\[\]/]/g, "_");
       }
-    };
-    salvarResultado();
-  }
-}, [fim, acertos, materia, perguntas.length]);
+
+      const salvarResultado = async () => {
+        const emailSanitizado = sanitizarEmail(userEmail);
+        const docRef = doc(db, "resultados", emailSanitizado);
+
+        const docSnap = await getDoc(docRef);
+        const erros = perguntas.length - acertos;
+
+        if (docSnap.exists()) {
+          const dadosAtuais = docSnap.data();
+          const acertosPorAreaAtual = dadosAtuais.acertosPorArea || {
+            linguagens: 0,
+            matematica: 0,
+            natureza: 0,
+            humanas: 0,
+          };
+
+          acertosPorAreaAtual[materia] = (acertosPorAreaAtual[materia] || 0) + acertos;
+          const simuladosFeitosAtual = dadosAtuais.simuladosFeitos || 0;
+
+          await setDoc(
+            docRef,
+            {
+              data: new Date(),
+              materia: materia,
+              total: perguntas.length,
+              acertosTotais: (dadosAtuais.acertosTotais || 0) + acertos,
+              errosTotais: (dadosAtuais.errosTotais || 0) + erros,
+              acertosPorArea: acertosPorAreaAtual,
+              simuladosFeitos: simuladosFeitosAtual + 1,
+            },
+            { merge: true }
+          );
+        } else {
+          await setDoc(docRef, {
+            data: new Date(),
+            materia: materia,
+            total: perguntas.length,
+            acertosTotais: acertos,
+            errosTotais: erros,
+            acertosPorArea: {
+              linguagens: materia === "linguagens" ? acertos : 0,
+              matematica: materia === "matematica" ? acertos : 0,
+              natureza: materia === "natureza" ? acertos : 0,
+              humanas: materia === "humanas" ? acertos : 0,
+            },
+            simuladosFeitos: 1,
+          });
+        }
+      };
+      salvarResultado();
+    }
+  }, [fim, acertos, materia, perguntas.length]);
 
   const responder = (opcao, buttonIndice) => {
     if (validacao) {

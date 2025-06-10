@@ -10,9 +10,17 @@ import humanas from '../assets/humanas.png'
 import linguagens from '../assets/linguagens.png'
 import logo from '../assets/logoHeader.png'
 import { useNavigate } from 'react-router-dom';
+import Logout from "../components/Logout";
+import { auth } from "../../firebaseConfig";
+
 
 function Home() {
   const navigate = useNavigate();
+  const handleLogout = Logout();
+  const email = auth.currentUser.email;
+  const foto = auth.currentUser.photoURL;
+  const user = auth.currentUser.displayName;
+
   return (
     <>
       <main id="mainHome">
@@ -27,7 +35,7 @@ function Home() {
             <hr></hr><br></br>
             <li onClick={() => navigate('/creditos')}><img src={creditos} className="icones"/>CRÉDITOS</li>
             <hr></hr><br></br>
-            <li onClick={() => navigate('/desempenho')}><img src={sair} className="icones"/>SAIR</li>
+            <li onClick={handleLogout}><img src={sair} className="icones"/>SAIR</li>
             <hr></hr><br></br>
             <li style={{display:'flex'}}>
             <input id="checkboxInput" type="checkbox"/>

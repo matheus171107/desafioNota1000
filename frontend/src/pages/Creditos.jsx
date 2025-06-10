@@ -6,9 +6,12 @@ import videoAula from '../assets/Videoaula.png'
 import sair from '../assets/Sair.png'
 import logo from '../assets/logoHeader.png'
 import { useNavigate } from 'react-router-dom';
+import Logout from "../components/Logout"
+
 
 function Creditos() {
   const navigate = useNavigate();
+  const handleLogout = Logout();
   return (
     <>
       <main id="mainCreditos">
@@ -23,7 +26,7 @@ function Creditos() {
             <hr></hr><br></br>
             <li onClick={() => navigate('/creditos')}><img src={creditos} class="icones"/>CRÉDITOS</li>
             <hr></hr><br></br>
-            <li onClick={() => navigate('/desempenho')}><img src={sair} class="icones"/>SAIR</li>
+            <li onClick={handleLogout}><img src={sair} class="icones"/>SAIR</li>
             <hr></hr><br></br>
             <li style={{display:'flex'}}>
             <input id="checkboxInput" type="checkbox"/>

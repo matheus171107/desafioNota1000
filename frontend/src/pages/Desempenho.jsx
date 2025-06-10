@@ -6,73 +6,172 @@ import videoAula from "../assets/Videoaula.png";
 import sair from "../assets/Sair.png";
 import logo from "../assets/logoHeader.png";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import GraficoPizza from "./../components/GraficoPizza";
+import { doc, getDoc } from "firebase/firestore";
+import { db, auth } from "../../firebaseConfig";
+import Logout from "../components/Logout";
 
 function Desempenho() {
   const navigate = useNavigate();
+  const handleLogout = Logout();
+  const userEmail = auth.currentUser?.email;
+
+  const [dados, setDados] = useState({
+    acertosTotais: 0,
+    errosTotais: 0,
+    acertosPorArea: {
+      linguagens: 0,
+      humanas: 0,
+      natureza: 0,
+    },
+    simuladosFeitos: 0,
+    taxaAcertosSimulados: 0,
+  });
+
+
+  function sanitizarEmail(email) {
+    return email.replace(/[.#$\[\]/]/g, "_");
+  }
+
+  const getResultados = async (userEmail) => {
+    if (!userEmail) {
+      console.log("Usuário não autenticado.");
+      return;
+    }
+
+    const emailSanitizado = sanitizarEmail(userEmail);
+    const docRef = doc(db, "resultados", emailSanitizado);
+
+    try {
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        setDados(docSnap.data());
+        console.log("Dados obtidos:", docSnap.data());
+      } else {
+        console.log("Nenhum documento encontrado para este e-mail.");
+      }
+    } catch (error) {
+      console.error("Erro ao buscar os dados:", error);
+    }
+  };
+
+  const calcularMaiorTaxa = (acertosPorArea) => {
+    const areas = Object.entries(acertosPorArea);
+    const maior = areas.reduce((prev, curr) => (curr[1] > prev[1] ? curr : prev), ["", 0]);
+    return maior[0];
+  };
+
+  const calcularMenorTaxa = (acertosPorArea) => {
+    const areas = Object.entries(acertosPorArea);
+    const menor = areas.reduce((prev, curr) => (curr[1] < prev[1] ? curr : prev), ["", Infinity]);
+    return menor[0];
+  };
+  const TaxaAcerto = () => {
+    if (dados.acertosTotais + dados.errosTotais > 0) {
+      return ((dados.acertosTotais * 100) / (dados.acertosTotais + dados.errosTotais)).toFixed(2);
+    } else {
+      return 0;
+    }
+  };
+
+  useEffect(() => {
+    getResultados(userEmail);
+  }, [userEmail]);
+
   return (
     <>
-    <main id="mainDesempenho">
-      <div id="menu">
+      <main id="mainDesempenho">
+        <div id="menu">
           <img src={logo} alt="" id="imgLog" />
           <ul>
-            <li onClick={() => navigate('/home')}><img src={home} class="icones" />HOME</li>
-            <hr></hr><br></br>
-            <li onClick={() => navigate('/desempenho')}><img src={desempenho} class="icones"/>DESEMPENHO</li>
-            <hr></hr><br></br>
-            <li onClick={() => navigate('/videoaula')}><img src={videoAula} class="icones"/>VÍDEO AULAS</li>
-            <hr></hr><br></br>
-            <li onClick={() => navigate('/creditos')}><img src={creditos} class="icones"/>CRÉDITOS</li>
-            <hr></hr><br></br>
-            <li onClick={() => navigate('/desempenho')}><img src={sair} class="icones"/>SAIR</li>
-            <hr></hr><br></br>
-            <li style={{display:'flex'}}>
-            <input id="checkboxInput" type="checkbox"/>
-            <label class="toggleSwitch" for="checkboxInput">
-            </label>
-              Dark mode
+            <li onClick={() => navigate("/home")}>
+              <img src={home} className="icones" alt="Home" />HOME
             </li>
+            <hr />
+            <br />
+            <li onClick={() => navigate("/desempenho")}>
+              <img src={desempenho} className="icones" alt="Desempenho" />DESEMPENHO
+            </li>
+            <hr />
+            <br />
+            <li onClick={() => navigate("/videoaula")}>
+              <img src={videoAula} className="icones" alt="Vídeo Aulas" />VÍDEO AULAS
+            </li>
+            <hr />
+            <br />
+            <li onClick={() => navigate("/creditos")}>
+              <img src={creditos} className="icones" alt="Créditos" />CRÉDITOS
+            </li>
+            <hr />
+            <br />
+            <li onClick={handleLogout}>
+              <img src={sair} className="icones" alt="Sair" />SAIR
+            </li>
+            <hr />
+            <br />
+            {/* <li style={{ display: "flex" }}>
+              <input id="checkboxInput" type="checkbox" />
+              <label className="toggleSwitch" htmlFor="checkboxInput"></label>
+              Dark mode
+            </li> */}
           </ul>
         </div>
 
-        <div class="conteudo">
+        <div className="conteudo">
           <h1>DESEMPENHO</h1>
           <hr />
-          <div class="desempenho-container">
-            <div class="percentual-acertos">
+          <div className="desempenho-container">
+            <div className="percentual-acertos">
               <h2>Percentual de Acertos</h2>
-              <p>Nenhuma questão respondida</p>
-              <p>0 questões</p>
+              {<GraficoPizza dataErro={[(100 - TaxaAcerto()).toFixed(2), TaxaAcerto()]}></GraficoPizza>}
             </div>
 
-            <div class="estatisticas">
-
-              <div class="estatistica verde">
+            <div className="estatisticas">
+              <div className="estatistica verde">
+                <p>
+                  <strong>{dados.acertosTotais}</strong>
+                </p>
                 <p>QUESTÕES QUE ACERTEI</p>
               </div>
 
-              <div class="estatistica vermelha">
+              <div className="estatistica vermelha">
+                <p>
+                  <strong>{dados.errosTotais}</strong>
+                </p>
                 <p>QUESTÕES QUE ERREI</p>
               </div>
 
-              <div class="estatistica">
+              <div className="estatistica">
                 <p>Matéria com maior taxa de acerto</p>
+                <p>
+                  <strong>{calcularMaiorTaxa(dados.acertosPorArea).toUpperCase()}</strong>
+                </p>
               </div>
 
-              <div class="estatistica">
+              <div className="estatistica">
                 <p>Matéria com maior taxa de erro</p>
+                <p>
+                  <strong>{calcularMenorTaxa(dados.acertosPorArea).toUpperCase()}</strong>
+                </p>
               </div>
 
-              <div class="estatistica">
+              <div className="estatistica">
                 <p>Simulados Feitos</p>
+                <p>
+                  <strong>{dados.simuladosFeitos}</strong>
+                </p>
               </div>
 
-              <div class="estatistica">
+              <div className="estatistica">
                 <p>Taxa de acertos nos simulados</p>
+                <p>{TaxaAcerto()}%</p>
               </div>
             </div>
-          </div><br></br>
+          </div>
+          <br />
 
-          <div class="materias-revisar">
+          <div className="materias-revisar">
             <p>Matérias que você precisa revisar</p>
             <table>
               <thead>
@@ -86,22 +185,22 @@ function Desempenho() {
                 <tr>
                   <td>Matemática</td>
                   <td>15</td>
-                  <td>20%</td>
+                  <td>{((dados.acertosPorArea.matematica * 100) / 10).toFixed(2)}%</td>
                 </tr>
                 <tr>
                   <td>Linguagens</td>
-                  <td>15</td>
-                  <td>30%</td>
+                  <td>10</td>
+                  <td>{((dados.acertosPorArea.linguagens * 100) / 10).toFixed(2)}%</td>
                 </tr>
                 <tr>
                   <td>Ciências Humanas</td>
                   <td>10</td>
-                  <td>60%</td>
+                  <td>{((dados.acertosPorArea.humanas * 100) / 10).toFixed(2)}%</td>
                 </tr>
                 <tr>
                   <td>Ciências Da Natureza</td>
-                  <td>10</td>
-                  <td>60%</td>
+                  <td>13</td>
+                  <td>{((dados.acertosPorArea.natureza * 100) / 13).toFixed(2)}%</td>
                 </tr>
               </tbody>
             </table>

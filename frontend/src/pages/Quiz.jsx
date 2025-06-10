@@ -2,10 +2,14 @@ import Perguntas from '../components/Perguntas'
 import { useNavigate, useLocation } from 'react-router-dom';
 import Seta from "../assets/seta.png"
 import "./style.css";
+import Logout from "../components/Logout";
+
 
 function Desempenho() {
   const navigate = useNavigate();
   const location = useLocation();
+  const handleLogout = Logout();
+  
   const { area, materia} = location.state || {};
   console.log(area);
 
