@@ -41,12 +41,12 @@ Com uma interface dinâmica e recursos de feedback detalhado, nossa plataforma o
 
 | Área               | Tecnologias                                                |
 | ----------------- | ---------------------------------------------------------------- |
-| Front-End	       | React.js, React Native (para versão mobile), TailwindCSS |
+| Front-End	       | React.js, (para versão mobile),  |
 | Back-End	       | Node.js, Express
  |
 | Banco de Dados	       | Firebase (Firestore para questões, Authentication para usuários)
 |
-| Hospedagem	      | Vercel (frontend), Heroku (backend)
+| Hospedagem	      | Vercel (frontend/ backend)
  |
 
 
