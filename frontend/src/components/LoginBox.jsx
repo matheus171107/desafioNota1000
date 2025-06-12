@@ -21,14 +21,17 @@ function LoginPage() {
             alert("Erro ao fazer login: " + error.message);
         }
     };
-    const CadastrarUser = async ({ email, senha }) => {
-        console.log(email)
+    const cadastrarUser = async ({ email, senha }) => {
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, email, senha); // Use "senha" aqui
             console.log("Usuário criado:", userCredential.user);
-            navigate("/home"); // Redireciona após criar o usuário
+            navigate("/home"); 
         } catch (error) {
-            console.log("Erro ao criar usuário:", error.code, error.message);
+            if(error.code == "auth/email-already-in-use"){
+                await loginEmail(email, senha)
+            }else{
+                console.log(error.code)
+            }
         }
     };
 
@@ -41,9 +44,7 @@ function LoginPage() {
             if (error.code === 'auth/invalid-credential') {
                 window.alert("Usuario ou Senha Invalidas");
             }else { 
-                console.log("Usuário não encontrado, criando novo...");
                 console.log(error.code)
-                await CadastrarUser({ email, senha });
             }
         }
     };
@@ -75,7 +76,7 @@ function LoginPage() {
                 />
 
                 <div id="buttonArea">
-                    <button id="login" onClick={() => loginEmail(email, senha)}>Login</button>
+                    <button id="login" onClick={() => cadastrarUser({ email, senha })}>Login</button>
                     <button id="loginGoogle" onClick={loginGoogle}>
                         <img src={google} alt="Google" id="google" /> Login com Google
                     </button>

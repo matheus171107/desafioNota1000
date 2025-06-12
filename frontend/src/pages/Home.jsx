@@ -1,4 +1,5 @@
 import "./style.css"
+import "../css/homeStyle.css"
 import home from '../assets/Home.png'
 import desempenho from '../assets/Desempenho.png'
 import creditos from '../assets/Creditos.png'
@@ -17,9 +18,9 @@ import { auth } from "../../firebaseConfig";
 function Home() {
   const navigate = useNavigate();
   const handleLogout = Logout();
-  const email = auth.currentUser.email;
-  const foto = auth.currentUser.photoURL;
-  const user = auth.currentUser.displayName;
+  // const email = auth.currentUser.email;
+  // const foto = auth.currentUser.photoURL;
+  // const user = auth.currentUser.displayName;
 
   return (
     <>
@@ -37,12 +38,6 @@ function Home() {
             <hr></hr><br></br>
             <li onClick={handleLogout}><img src={sair} className="icones"/>SAIR</li>
             <hr></hr><br></br>
-            <li style={{display:'flex'}}>
-            <input id="checkboxInput" type="checkbox"/>
-            <label className="toggleSwitch" for="checkboxInput">
-            </label>
-              Dark mode
-            </li>
           </ul>
         </div>
         

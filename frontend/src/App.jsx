@@ -17,7 +17,7 @@ function App() {
     const unsubscribe = auth.onAuthStateChanged(setUser);
     return () => unsubscribe();
   }, []);
-  console.log(user)
+
   return (
     <Router>
       <Routes>

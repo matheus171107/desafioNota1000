@@ -1,0 +1,193 @@
+#perguntasBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#perguntasBox h1 {
+  text-align: start;
+}
+
+#perguntasBox button {
+  margin: 10px;
+  padding: 10px;
+  width: 85%;
+  text-align: start;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#perguntasBox button:hover {
+  transform: scale(1.05);
+  background-color: #b3e5fc; /* Cor de fundo ao passar o mouse */
+}
+
+#mainQuiz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #d9d9d9;
+}
+
+#mainQuiz h1 {
+  margin: 0%;
+  padding: 15px;
+  font-weight: 300;
+  width: 97%;
+}
+
+.hr {
+  background-color: black;
+  height: 0.3px;
+  margin-bottom: 20px;
+  width: 97%;
+}
+
+.hr2 {
+  background-color: black;
+  height: 0.3px;
+  margin-bottom: 20px;
+  width: 30%;
+  display: none ;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  width: 70%;
+  margin-bottom: 15px;
+}
+
+#materia {
+  color: black;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* padding: 5px; */
+  width: 100%;
+  font-size: 18pt;
+}
+
+#materia img {
+  padding: 5px;
+  /* margin-right: 420px; */
+  cursor: pointer;
+}
+
+.pergunta {
+  color: black;
+  margin: 20px;
+  font-size: 14pt;
+  text-align: justify;
+  font-weight: 400;
+}
+
+.questao {
+  background-color: #A3D2D5;
+  border-radius: 20px;
+  height: 120%;
+  /* width: 85%; */
+  padding: 10px;
+  padding-bottom: 40px;
+  margin-bottom: 10px;
+}
+
+#texto1 {
+  text-align: center;
+  color: black;
+}
+
+#texto {
+  color: black;
+  margin: 3px;
+}
+
+#explicacao{
+  width: 90%;
+  text-align: justify;
+  display: none;
+}
+
+#explicacao p{
+  color:black;
+  margin-top: 0%;
+}
+#explicacao h3{
+  color: black;
+  padding-bottom: 10px;
+}
+
+#buttonProximo button{
+  font-size: 13pt;
+  width: 180px;
+  height: 30px;
+}
+
+#buttonProximo{
+  display: none;
+  margin-top: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+#materiaText{
+  color: black;
+}
+
+@media (max-width: 768px) {
+
+  #container {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .questao {
+    height: auto; 
+    padding-bottom: 20px;
+  }
+
+  #materia {
+    font-size: 16pt;
+  }
+
+  .pergunta {
+    font-size: 12pt;
+    text-align: left;
+    margin: 15px 0;
+  }
+
+  #perguntasBox img {
+    max-width: 100% !important; 
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  #perguntasBox button {
+    width: 100%;
+    padding: 15px;
+    font-size: 12pt;
+    text-align: left;
+  }
+  
+  #explicacao {
+    width: 100%;
+  }
+  #explicacao h3 {
+    font-size: 14pt;
+  }
+  #explicacao p {
+    font-size: 11pt;
+  }
+
+  #buttonProximo button {
+    width: 100%;
+    height: auto;
+    padding: 14px;
+    font-size: 12pt;
+  }
+}

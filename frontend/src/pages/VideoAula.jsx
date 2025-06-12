@@ -1,4 +1,4 @@
-import "./style.css";
+import "../css/videoaulaStyle.css";
 import home from '../assets/Home.png'
 import desempenho from '../assets/Desempenho.png'
 import creditos from '../assets/Creditos.png'
@@ -32,12 +32,6 @@ function VideoAula() {
             <hr></hr><br></br>
             <li onClick={handleLogout}><img src={sair} class="icones"/>SAIR</li>
             <hr></hr><br></br>
-            <li style={{display:'flex'}}>
-            <input id="checkboxInput" type="checkbox"/>
-            <label class="toggleSwitch" for="checkboxInput">
-            </label>
-              Dark mode
-            </li>
           </ul>
         </div>
 

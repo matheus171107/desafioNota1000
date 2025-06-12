@@ -1,0 +1,140 @@
+#mainHome {
+  width: 98vW;
+  height: 170vh;
+  display: flex;
+  background-color: #f6f6f6;
+}
+
+#mainHome h1 {
+  margin: 0%;
+  padding: 15px;
+  font-weight: 300;
+}
+
+#menu {
+  background-color: white;
+  width: 200px;
+  height: 450px;
+  border-radius: 20px;
+  margin: 0%;
+  align-items: center;
+  margin: 15px;
+}
+
+#menu ul {
+  padding: 10px;
+}
+
+#menu li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.icones {
+  width: 20px;
+  padding-right: 10px;
+}
+
+#imgLog {
+  width: 150px;
+}
+
+.conteudo {
+  width: 80%;
+}
+
+.natureza {
+  background-color: #3d7e49;
+  width: 98%;
+  height: 21%;
+  border-radius: 20px;
+}
+
+.matematica {
+  background-color: #830909;
+  width: 98%;
+  height: 21%;
+  border-radius: 20px;
+  margin-top: 25px;
+}
+
+.humanas {
+  background-color: #b36100;
+  width: 98%;
+  height: 21%;
+  border-radius: 20px;
+  margin-top: 25px;
+}
+
+.linguagens {
+  background-color: #8400b3;
+  width: 98%;
+  height: 21%;
+  border-radius: 20px;
+  margin-top: 25px;
+}
+
+.buttons {
+  width: 100%;
+  text-align: center;
+}
+
+p {
+  color: white;
+  margin: 20px;
+  font-size: 15pt;
+  text-align: justify;
+}
+
+h2 {
+  display: flex;
+  font-weight: bold;
+  color: white;
+  padding: 15px;
+  align-items: center;
+}
+
+button {
+  width: 85%;
+  border-radius: 10px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.icon {
+  width: 30px;
+  margin: 5px;
+  padding: 5px;
+}
+
+
+
+
+@media (max-width: 768px) {
+
+  #mainHome {
+    flex-direction: column;
+    align-items: center;   
+    height: auto;          
+    width: 100%;          
+  }
+  #menu {
+    width: 90%;           
+    height: auto;         
+    margin-bottom: 20px;
+  }
+  .conteudo {
+    width: 90%;           
+  }
+  .natureza,
+  .matematica,
+  .humanas,
+  .linguagens {
+    height: auto;         
+    padding-bottom: 20px; 
+  }
+  p {
+    font-size: 12pt;      
+  }
+}

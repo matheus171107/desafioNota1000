@@ -1,4 +1,5 @@
 import "./style.css";
+import "../css/desempenhoStyle.css"
 import home from "../assets/Home.png";
 import desempenho from "../assets/Desempenho.png";
 import creditos from "../assets/Creditos.png";
@@ -21,6 +22,7 @@ function Desempenho() {
     acertosTotais: 0,
     errosTotais: 0,
     acertosPorArea: {
+      matematica: 0,
       linguagens: 0,
       humanas: 0,
       natureza: 0,
@@ -58,14 +60,15 @@ function Desempenho() {
 
   const calcularMaiorTaxa = (acertosPorArea) => {
     const areas = Object.entries(acertosPorArea);
-    const maior = areas.reduce((prev, curr) => (curr[1] > prev[1] ? curr : prev), ["", 0]);
+    const maior = areas.reduce((prev, curr) => (curr[1] > prev[1] ? curr : prev), ["Você ainda não fez nenhum simulado", 0]);
     return maior[0];
   };
 
   const calcularMenorTaxa = (acertosPorArea) => {
     const areas = Object.entries(acertosPorArea);
-    const menor = areas.reduce((prev, curr) => (curr[1] < prev[1] ? curr : prev), ["", Infinity]);
+    const menor = areas.reduce((prev, curr) => (curr[1] < prev[1] ? curr : prev), ["Você ainda não fez nunhum simulado", 0]);
     return menor[0];
+   
   };
   const TaxaAcerto = () => {
     if (dados.acertosTotais + dados.errosTotais > 0) {
@@ -110,11 +113,6 @@ function Desempenho() {
             </li>
             <hr />
             <br />
-            {/* <li style={{ display: "flex" }}>
-              <input id="checkboxInput" type="checkbox" />
-              <label className="toggleSwitch" htmlFor="checkboxInput"></label>
-              Dark mode
-            </li> */}
           </ul>
         </div>
 
@@ -185,7 +183,7 @@ function Desempenho() {
                 <tr>
                   <td>Matemática</td>
                   <td>15</td>
-                  <td>{((dados.acertosPorArea.matematica * 100) / 10).toFixed(2)}%</td>
+                  <td>{((dados.acertosPorArea.matematica * 100) / 15).toFixed(2)}%</td>
                 </tr>
                 <tr>
                   <td>Linguagens</td>

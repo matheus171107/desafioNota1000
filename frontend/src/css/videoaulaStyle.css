@@ -1,0 +1,164 @@
+#mainVideoAula {
+  width: 98vW;
+  height: 81  0vh;
+  display: flex;
+}
+
+#mainVideoAula h1 {
+  margin: 0%;
+  padding: 15px;
+  font-weight: 300;
+}
+  
+h3 {
+  color: white;
+  margin: 0%;
+  padding: 5px;
+  padding-top: 0%;
+  padding-bottom: 0%;
+}
+
+.naturezaV p{
+  margin: 5px;
+  margin-bottom: 10px;
+}
+
+.naturezaV {
+  background-color: #3d7e49;
+  width: 90%;
+  height: 105%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.video1{
+  background-color: white;
+  width: 80%;
+  height: 12%;
+  display: grid;
+  justify-content: center;
+  margin-top: 40px;
+  border-radius: 5px;
+}
+
+.descricaoVideo{
+  width: 98%;
+} 
+
+.naturezaV h2{
+  padding: 0%;
+  margin: 0%;
+  padding-top: 10px;
+}
+
+.areaVideos{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.matematicaV{
+  background-color: #830909;
+  width: 91%;
+  height: 20%;
+  border-radius: 20px;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.matematicaV p{
+  margin: 5px;
+  margin-bottom: 10px;
+}
+
+.humanasV{
+  background-color: #b36100;
+  width: 91%;
+  height: 20%;
+  border-radius: 20px;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.humanasV p{
+  margin: 5px;
+  margin-bottom: 10px;
+}
+
+.literaturaV{
+  background-color: #8400b3;
+  width: 91%;
+  height: 20%;
+  border-radius: 20px;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.literaturaV p{
+  margin: 5px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+
+  #mainVideoAula {
+    flex-direction: column; 
+    align-items: center;
+    height: auto;           
+    width: 100%;
+  }
+
+  .areaVideos {
+    width: 95%; 
+  }
+
+  .naturezaV,
+  .matematicaV,
+  .humanasV,
+  .literaturaV {
+    width: 100%;           
+    height: auto;           
+    padding: 20px 15px;    
+  }
+
+  .video1 {
+    width: 100%;        
+    height: auto;         
+    aspect-ratio: 16 / 9; 
+    background-color: #333; 
+    margin-top: 20px;
+  }
+  
+  .naturezaV h2,
+  .matematicaV h2,
+  .humanasV h2,
+  .literaturaV h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+  }
+  
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  .naturezaV p,
+  .matematicaV p,
+  .humanasV p,
+  .literaturaV p {
+    font-size: 0.95rem;
+  }
+  iframe {
+    width: 400px;
+    height: 230px;
+  }
+}

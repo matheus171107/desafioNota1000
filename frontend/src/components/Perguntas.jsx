@@ -24,7 +24,7 @@ function Perguntas() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/${materia}`)
+      .get(`http://localhost:3000/api/${materia}`)
       .then((res) => setPerguntas(res.data))
       .catch((err) => console.log("Erro ao carregar", err));
   }, [materia]);
@@ -149,7 +149,7 @@ function Perguntas() {
     return (
       <>
         <h3 style={{ color: "black", fontSize: "20pt" }}>Seus Acertos</h3>
-        <p>Acertos: {acertos} / {perguntas.length}</p>
+        <p style={{color: "black"}}><strong>Acertos: {acertos} / {perguntas.length}</strong></p>
       </>
     );
   }
@@ -166,7 +166,7 @@ function Perguntas() {
     <div>
       <div id="perguntasBox">
         <h3 className="pergunta">{pergunta.enunciado}</h3>
-        {urlImg && <img src={urlImg} alt="Imagem da pergunta" style={{ maxWidth: "800px" }} />}
+        {urlImg && <img src={urlImg} alt="Imagem da pergunta" />}
         <h3 className="pergunta">{pergunta.pergunta}</h3>
         {pergunta.opcoes.map((op, idx) => (
           <button key={idx} onClick={() => responder(op, idx)}>{op}</button>
