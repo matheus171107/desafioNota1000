@@ -13,14 +13,17 @@ import logo from '../assets/logoHeader.png'
 import { useNavigate } from 'react-router-dom';
 import Logout from "../components/Logout";
 import { auth } from "../../firebaseConfig";
+import React, { useState } from "react";
 
 
 function Home() {
   const navigate = useNavigate();
   const handleLogout = Logout();
-  // const email = auth.currentUser.email;
-  // const foto = auth.currentUser.photoURL;
-  // const user = auth.currentUser.displayName;
+  const user = auth.currentUser;
+  const [showProfile, setShowProfile] = useState(false);
+  const handleProfileClick = () => {
+    setShowProfile((prev) => !prev);
+  };
 
   return (
     <>
@@ -42,6 +45,21 @@ function Home() {
         </div>
         
         <div className="conteudo">
+          {user && user.photoURL && (
+            <div style={{position: "absolute",top: 24, right: 32,textAlign: "right",zIndex: 10
+            }}>
+              <img src={user.photoURL} alt="Foto de perfil" id="profileImage" onClick={handleProfileClick}/>
+              {showProfile && (
+                <div id="profileInfo">
+                  <div><strong>Usuário:</strong> {user.displayName ? user.displayName.split(" ")[0] : "Não informado"}</div>
+                  <div><strong>Telefone:</strong> {user.phoneNumber || "Não informado"}</div>
+                  <div><strong>Último Login:</strong> {user.metadata.lastSignInTime}</div>
+                  <div><strong>Nome:</strong> {user.displayName || "Não informado"}</div>
+                  <div><strong>Email:</strong> {user.email}</div>
+                </div>
+              )}
+            </div>
+          )}
           <h1>ENEM</h1>
           <hr></hr>
 

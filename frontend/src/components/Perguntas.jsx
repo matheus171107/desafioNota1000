@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import carregando from "../assets/carregando.gif";
-import { useLocation } from "react-router-dom";
 import { setDoc, doc, getDoc } from "firebase/firestore";
 import { db, auth } from "../../firebaseConfig"
 
@@ -16,6 +16,7 @@ function Perguntas() {
   const location = useLocation();
   const { materia } = location.state || {};
   const userEmail = auth.currentUser.email;
+  const navigate = useNavigate();
 
   const buttonProximo = document.querySelector("#buttonProximo");
   const materiaText = document.querySelector('#materiaText')
@@ -148,8 +149,12 @@ function Perguntas() {
     materiaText.innerText = `SIMULADO DE ${materia.toUpperCase()} FINALIZADO`
     return (
       <>
-        <h3 style={{ color: "black", fontSize: "20pt" }}>Seus Acertos</h3>
-        <p style={{color: "black"}}><strong>Acertos: {acertos} / {perguntas.length}</strong></p>
+        <h3 style={{ color: "black", fontSize: "27pt", textAlign: "center"}}>Seus Acertos</h3>
+        <p style={{color: "black", fontSize: "20pt", textAlign: "center"}}><strong>Acertos: {acertos} / {perguntas.length}</strong></p>
+        <div style={{display: "flex", justifyContent: "center", marginTop: "20px", flexDirection: "column", alignItems: "center"}}>
+          <button style={{marginBottom: 10}} onClick={() => navigate("/desempenho")}>Ir para desempenho</button>
+          <button onClick={() => navigate("/home")}>Voltar para home</button>
+        </div>
       </>
     );
   }
@@ -166,14 +171,14 @@ function Perguntas() {
     <div>
       <div id="perguntasBox">
         <h3 className="pergunta">{pergunta.enunciado}</h3>
-        {urlImg && <img src={urlImg} alt="Imagem da pergunta" />}
+        {urlImg && <img src={urlImg} alt="Imagem da pergunta" style={{maxWidth: 800}}/>}
         <h3 className="pergunta">{pergunta.pergunta}</h3>
         {pergunta.opcoes.map((op, idx) => (
           <button key={idx} onClick={() => responder(op, idx)}>{op}</button>
         ))}
       </div>
 
-      <div id="buttonProximo" style={{ display: "none" }}>
+      <div id="buttonProximo">
         <button onClick={proximaPergunta}>Próxima Questão</button>
       </div>
     </div>

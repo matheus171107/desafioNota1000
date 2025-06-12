@@ -108,7 +108,28 @@ button {
   padding: 5px;
 }
 
+#profileImage {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 4px;
+  border: 2px solid #ccc;
+  cursor: pointer;
+}
 
+#profileInfo{
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  padding: 12px;
+  margin-top: 8px;
+  width: 350px;
+  text-align: left;
+  position: absolute;
+  right: 0;
+}
 
 
 @media (max-width: 768px) {

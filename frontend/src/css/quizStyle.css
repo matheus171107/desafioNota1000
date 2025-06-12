@@ -27,6 +27,7 @@
   flex-direction: column;
   align-items: center;
   background-color: #d9d9d9;
+  min-height: 100vh;
 }
 
 #mainQuiz h1 {
@@ -34,6 +35,7 @@
   padding: 15px;
   font-weight: 300;
   width: 97%;
+  align-items: start;
 }
 
 .hr {
@@ -60,6 +62,7 @@
   padding: 1.5rem;
   width: 70%;
   margin-bottom: 15px;
+  min-height: 70vh;
 }
 
 #materia {
@@ -88,13 +91,16 @@
 }
 
 .questao {
+  display: flex;
+  flex-direction: column;
   background-color: #A3D2D5;
   border-radius: 20px;
-  height: 120%;
-  /* width: 85%; */
+  min-height: 40vh;
+  min-width: 50vh;
   padding: 10px;
   padding-bottom: 40px;
   margin-bottom: 10px;
+  justify-content: center;
 }
 
 #texto1 {
