@@ -24,8 +24,9 @@ function Perguntas() {
   const texto1 = document.querySelector("#texto1")
 
   useEffect(() => {
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000/api";
     axios
-      .get(`http://localhost:3000/api/${materia}`)
+      .get(`${API_BASE_URL}/${materia}`)
       .then((res) => setPerguntas(res.data))
       .catch((err) => console.log("Erro ao carregar", err));
   }, [materia]);
