@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react"; // 1. Importar useRef
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import carregando from "../assets/carregando.gif";
 import { setDoc, doc, getDoc } from "firebase/firestore";
-import { db, auth } from "../../firebaseConfig"
+import { db, auth } from "../../firebaseConfig";
 
 function Perguntas() {
   const [perguntas, setPerguntas] = useState([]);
@@ -11,18 +11,19 @@ function Perguntas() {
   const [acertos, setAcertos] = useState(0);
   const [fim, setFim] = useState(false);
   const [validacao, setValidacao] = useState(true);
-  const [scrollar, setScrollar] = useState(false);
+  
+  // 2. Usar estado para controlar a visibilidade do botão "Próximo"
+  const [mostrarBotaoProximo, setMostrarBotaoProximo] = useState(false);
+
+  // 3. Usar useRef para obter uma referência segura aos botões de resposta
+  const respostasContainerRef = useRef(null);
 
   const location = useLocation();
   const { materia } = location.state || {};
   const userEmail = auth.currentUser.email;
   const navigate = useNavigate();
 
-  const buttonProximo = document.querySelector("#buttonProximo");
-  const materiaText = document.querySelector('#materiaText')
-  const texto = document.querySelector("#texto")
-  const texto1 = document.querySelector("#texto1")
-
+  // O useEffect para buscar os dados está correto, sem alterações aqui.
   useEffect(() => {
     const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000/api";
     axios
@@ -31,13 +32,14 @@ function Perguntas() {
       .catch((err) => console.log("Erro ao carregar", err));
   }, [materia]);
 
+  // Este useEffect para o scroll também pode ser mantido
   useEffect(() => {
-    if (scrollar) {
+    if (mostrarBotaoProximo) {
       window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
-      setScrollar(false);
     }
-  }, [scrollar]);
+  }, [mostrarBotaoProximo]);
 
+  // O useEffect para salvar o resultado no Firebase também está correto.
   useEffect(() => {
     if (fim) {
       function sanitizarEmail(email) {
@@ -102,86 +104,94 @@ function Perguntas() {
       const perguntaAtual = perguntas[indice];
       if (!perguntaAtual) return;
 
-      const buttons = document.querySelectorAll("#perguntasBox button");
+      // 4. Acessar os botões de forma segura através do ref
+      const buttons = respostasContainerRef.current.querySelectorAll("button");
       const buttonSelect = buttons[buttonIndice];
       const indiceCorreta = perguntaAtual.opcoes.findIndex(op => op === perguntaAtual.correta);
+      
       if (opcao === perguntaAtual.correta) {
         setAcertos(prev => prev + 1);
         buttonSelect.style.backgroundColor = "#83db85";
       } else {
         buttonSelect.style.backgroundColor = "#ff5e85";
         const buttonCorreta = buttons[indiceCorreta];
-        buttonCorreta.style.backgroundColor = "#83db85";
+        if (buttonCorreta) { // Verificação extra de segurança
+          buttonCorreta.style.backgroundColor = "#83db85";
+        }
       }
-      buttonProximo.style.display = "flex";
-      const Areaexplicacao = document.getElementById("explicacao");
-      const Textexplicacao = document.querySelector("#explicacao p");
-
-      if (Areaexplicacao && Textexplicacao) {
-        Areaexplicacao.style.display = "block";
-        Textexplicacao.innerText = perguntaAtual.explicacao;
-      }
-
+      
+      // 5. Atualizar o estado para mostrar o botão e a explicação
+      setMostrarBotaoProximo(true);
       setValidacao(false);
-      setScrollar(true);
     }
   };
 
   const proximaPergunta = async () => {
-    const Areaexplicacao = document.getElementById("explicacao");
-    const buttons = document.querySelectorAll("#perguntasBox button");
-    if (Areaexplicacao) Areaexplicacao.style.display = "none";
-    texto.innerText = `Questão ${indice + 2}`
-    buttons.forEach(btn => (btn.style.backgroundColor = ""));
+    // 6. Resetar os estilos dos botões de forma segura
+    if (respostasContainerRef.current) {
+      const buttons = respostasContainerRef.current.querySelectorAll("button");
+      buttons.forEach(btn => (btn.style.backgroundColor = ""));
+    }
 
     if (indice + 1 < perguntas.length) {
       setIndice(indice + 1);
-      buttonProximo.style.display = "none";
+      setMostrarBotaoProximo(false); // Esconde o botão novamente
     } else {
       setFim(true);
-      console.log(materia, acertos, perguntas.length);
     }
     setValidacao(true);
   };
 
+  if (perguntas.length === 0) {
+    return <img src={carregando} alt="Carregando..." width="60px" />;
+  }
+
+  // 7. Mover a lógica de UI para dentro do return, controlada pelo estado 'fim'
   if (fim) {
-    texto1.style.display = 'none'
-    texto.style.display = 'none'
-    materiaText.innerText = `SIMULADO DE ${materia.toUpperCase()} FINALIZADO`
     return (
       <>
-        <h3 style={{ color: "black", fontSize: "27pt", textAlign: "center"}}>Seus Acertos</h3>
-        <p style={{color: "black", fontSize: "20pt", textAlign: "center"}}><strong>Acertos: {acertos} / {perguntas.length}</strong></p>
-        <div style={{display: "flex", justifyContent: "center", marginTop: "20px", flexDirection: "column", alignItems: "center"}}>
-          <button style={{marginBottom: 10}} onClick={() => navigate("/desempenho")}>Ir para desempenho</button>
+        <h2 style={{textTransform: 'uppercase'}}>SIMULADO DE {materia} FINALIZADO</h2>
+        <h3 style={{ color: "black", fontSize: "27pt", textAlign: "center" }}>Seus Acertos</h3>
+        <p style={{ color: "black", fontSize: "20pt", textAlign: "center" }}>
+          <strong>Acertos: {acertos} / {perguntas.length}</strong>
+        </p>
+        <div style={{ display: "flex", justifyContent: "center", marginTop: "20px", flexDirection: "column", alignItems: "center" }}>
+          <button style={{ marginBottom: 10 }} onClick={() => navigate("/desempenho")}>Ir para desempenho</button>
           <button onClick={() => navigate("/home")}>Voltar para home</button>
         </div>
       </>
     );
   }
 
-  if (perguntas.length === 0) {
-    return <img src={carregando} alt="Carregando..." width="60px" />;
-  }
-
   const pergunta = perguntas[indice];
   const urlImg = pergunta.url;
-  materiaText.innerText = pergunta.categoria;
 
+  // 8. Toda a UI agora é renderizada pelo componente, sem manipulação externa
   return (
     <div>
-      <div id="perguntasBox">
+      <h2 id="materiaText">{pergunta.categoria}</h2>
+      <p id="texto">Questão {indice + 1}</p>
+      
+      <div id="perguntasBox" ref={respostasContainerRef}>
         <h3 className="pergunta">{pergunta.enunciado}</h3>
-        {urlImg && <img src={urlImg} alt="Imagem da pergunta" style={{maxWidth: 800}}/>}
+        {urlImg && <img src={urlImg} alt="Imagem da pergunta" style={{ maxWidth: 800 }} />}
         <h3 className="pergunta">{pergunta.pergunta}</h3>
         {pergunta.opcoes.map((op, idx) => (
           <button key={idx} onClick={() => responder(op, idx)}>{op}</button>
         ))}
       </div>
 
-      <div id="buttonProximo">
-        <button onClick={proximaPergunta}>Próxima Questão</button>
-      </div>
+      {/* 9. Renderização condicional da explicação e do botão "Próximo" */}
+      {mostrarBotaoProximo && (
+        <>
+          <div id="explicacao" style={{display: 'block'}}>
+            <p>{pergunta.explicacao}</p>
+          </div>
+          <div id="buttonProximo">
+            <button onClick={proximaPergunta}>Próxima Questão</button>
+          </div>
+        </>
+      )}
     </div>
   );
 }
