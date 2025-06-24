@@ -60,7 +60,7 @@
   background-color: #ffffff;
   border-radius: 20px;
   padding: 1.5rem;
-  width: 70%;
+  width: 60%;
   margin-bottom: 15px;
   min-height: 70vh;
 }
@@ -96,7 +96,7 @@
   background-color: #A3D2D5;
   border-radius: 20px;
   min-height: 40vh;
-  min-width: 50vh;
+  min-width: 40vh;
   padding: 10px;
   padding-bottom: 40px;
   margin-bottom: 10px;
@@ -137,6 +137,7 @@
 #buttonProximo{
   margin-top: 10px;
   width: 100%;
+  display: flex;
   justify-content: center;
 }
 

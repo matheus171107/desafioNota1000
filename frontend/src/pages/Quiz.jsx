@@ -22,7 +22,6 @@ function Desempenho() {
         <div id="materia"><img src={Seta} alt="" width="40px" onClick={() => navigate("/home")} /> <p id="materiaText">{materia}</p></div>
           <div className="questao">
             <p id='texto1'>Questões ENEM</p>
-            <p id='texto'>QUESTÃO 1</p>
 
           <div className="hr2"></div>
           <Perguntas></Perguntas>
