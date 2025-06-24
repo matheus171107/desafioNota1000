@@ -106,7 +106,8 @@
 #texto1 {
   text-align: center;
   color: black;
-  margin: 0%;
+  margin: 4px;
+  font-size: 16pt;
 }
 
 #texto {
